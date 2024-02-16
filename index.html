@@ -4,24 +4,24 @@
     <meta charset='utf-8'>
     <title>SLThree</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="icon" href=""/>
+    <link rel="icon" href="slthree.ico"/>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 <body>
     <header>
         <nav class="headmenu-nav">
-            <a href="https://aiexandrkotov.github.io/index.html"><img class="headmenu-image" src="https://aiexandrkotov.github.io/img/headlogo.png" alt="logo"/></a>
+            <a href="index.html"><img class="headmenu-image" src="headlogo.png" alt="logo"/></a>
             <ul class="headmenu-list">
-                <li><a href="https://aiexandrkotov.github.io/index.html">Главная</a></li>
+                <li><a href="index.html">Главная</a></li>
             </ul>
         </nav>
     </header>
     <main class="container">
         <div class="archive">
             <h1>SLThree</h1>
-                <p class="h1"><strong>SLThree</strong> — скриптовый язык.
+                <p class="h1"><strong>SLThree</strong> (англ. <em>Script Language 3</em> &mdash; Скриптовый язык 3, "третий скриптовый") &mdash; язык программирования, базирующийся на платформе .NET Framework.
                 <ol class="archive-nav">
-                    <li class="archive-nav-h1">Навигация:</li>
+                    <li class="archive-nav-h1">FAQ:</li>
                     <li class="archive-nav-h2"><a href="#a0">§ 1 Возможности и особенности</a></li>
                     <li class="archive-nav-h3"><a href="#a0">§ 1.1 Возможности и особенности</a></li>
                     <li class="archive-nav-h2"><a href="#arefs">Ссылки</a></li>
@@ -30,6 +30,49 @@
                 <p class="h2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint animi a quidem facere quasi corrupti consequuntur laudantium distinctio cum itaque harum dicta ut, nobis voluptas veritatis hic, iste explicabo non!
                 Necessitatibus, doloremque. Officia quo necessitatibus debitis excepturi nostrum aliquam facilis vitae voluptatem, eligendi ducimus consequuntur provident doloribus delectus rem explicabo, quas neque placeat cum porro veniam, architecto id. Provident, quas.
                 Incidunt amet modi obcaecati ipsa molestiae nemo consequatur quaerat quia sint, corporis ipsam vel repellat? Natus sint molestias architecto, eaque modi praesentium, in repellat dolor eum fugit impedit possimus temporibus?</p>
+                <div class="textbox">
+                    <div class="slt-code"><ol>
+                        <li class="slt-line"></li>
+                        <li class="slt-line"><span class="slt-type">i64</span> a = <span class="slt-digit">2</span> + <span class="slt-digit">2</span>;</li>
+                        <li class="slt-line"><span class="slt-type">i32</span> b = <span class="slt-digit">2i32</span> + <span class="slt-digit">0x2</span>;</li>
+                        <li class="slt-line"><span class="slt-type">list</span>&lt;<span class="slt-type">string</span>&gt; a = [<span class="slt-string">"str1"</span>, <span class="slt-string">"str2"</span>, <span class="slt-string">"str3"</span>, <span class="slt-string">"str4"</span>, <span class="slt-string">"str5"</span>, <span class="slt-string">"str6"</span>];</li>
+                        <li class="slt-line">range =  -<span class="slt-digit">10</span>..<span class="slt-digit">10</span>;</li>
+                        <li class="slt-line">a = <span class="slt-keyword1">new context </span>A : <span class="slt-type">i64</span> {  Value = a; Value = b; };</li>
+                        <li class="slt-line"><span class="slt-keyword1">context </span>A : <span class="slt-type">i64</span> { </li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;Value = x;</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;Value = y;</li>
+                        <li class="slt-line">}</li>
+                        <li class="slt-line"></li>
+                        <li class="slt-line"><span class="slt-keyword2">foreach</span> (<span class="slt-type">i64</span> x<span class="slt-keyword2"> in </span><span class="slt-digit">1</span>..<span class="slt-digit">10</span>) {</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;console.writeln(x);</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;console.writeln<<span class="slt-type">i64</span>, <span class="slt-type">i64</span>>(x, x);</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">if</span> (x == <span class="slt-digit">0</span>)</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">continue</span>;</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">else </span></li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">break</span>;</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">return</span> <span class="slt-digit">2</span> + <span class="slt-digit">2</span> * <span class="slt-digit">2</span>;</li>
+                        <li class="slt-line">}</li>
+                        <li class="slt-line">a = <span class="slt-keyword1">new </span><span class="slt-keyword1">using </span><span class="slt-type">i64</span>;</li>
+                        <li class="slt-line"><span class="slt-keyword1">using </span><span class="slt-type">i64</span><span class="slt-keyword1"> as </span>xxx;</li>
+                        <li class="slt-line"><span class="slt-keyword2">try</span> {</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;console.writeln(<span class="slt-string">"try"</span>);</li>
+                        <li class="slt-line">}<span class="slt-keyword2"> catch</span> {</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;console.writeln(<span class="slt-string">"catch"</span>);</li>
+                        <li class="slt-line">}<span class="slt-keyword2"> finally</span> {</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;console.writeln(<span class="slt-string">"finally"</span>);</li>
+                        <li class="slt-line">}</li>
+                        <li class="slt-line"><span class="slt-keyword1">new </span><span class="slt-type">any</span>(<span class="slt-digit">1</span>, <span class="slt-digit">2</span>, []);</li>
+                        <li class="slt-line"><span class="slt-keyword1">new </span><span class="slt-type">any</span>[<span class="slt-digit">10</span>];</li>
+                        <li class="slt-line">x = <span class="slt-keyword1">recursive</span> <span class="slt-keyword1">explicit</span> (a, b) => a + b;</li>
+                        <li class="slt-line">x = <span class="slt-keyword1">recursive</span> <span class="slt-keyword1">explicit</span> (<span class="slt-type">i64</span> a, <span class="slt-type">i64</span> b): <span class="slt-type">i64</span> => a + b;</li>
+                        <li class="slt-line"><span class="slt-type">string</span> interpolated = <span class="slt-string">$"<span class="slt-operator">{</span><span class="slt-digit">2</span><span class="slt-operator">}</span> + <span class="slt-operator">{</span><span class="slt-digit">2</span><span class="slt-operator">}</span> = <span class="slt-operator">{</span><span class="slt-digit">2</span> + <span class="slt-digit">2</span><span class="slt-operator">}</span>"</span>;</li>
+                        </ol>
+                        </div>
+                        
+                        
+                        
+                    <span class="description">Код SLThree</span> <!-- optional -->
+                </div>
                 
             <h2 id="arefs">Ссылки</h2>
             <ul>
@@ -38,11 +81,12 @@
                 <li><a href="https://github.com/AIexandrKotov/SLThree/wiki">Подробная wiki по языку</a></li>
                 <li><a href="https://github.com/AIexandrKotov/SLThree">Исходный код</a></li>
             </ul>
+                
         </div>
     </main>
     <footer class="footinfo">
         <div class="container">
-            <span><a class="footinfo-ref ref-github" href="https://github.com/AIexandrKotov/AIexandrKotov.github.io">github.com</a> Александр Котов 2024</span>
+            <span><a class="footinfo-ref ref-github" href="https://AIexandrKotov.github.io">aiexandrkotov.github.io</a></span>
         </div>
     </footer>
 </body>
