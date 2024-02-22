@@ -598,6 +598,10 @@ img.projects-screens-3{
     img.projects-screens-1, img.projects-screens-1-big, img.projects-screens-2, img.projects-screens-3{
         width: 98%;
     }
+    .slt-code ol, .lang-code ol {
+        list-style-type: none;
+        padding-left: 0px;
+    }
 }
 
 /*debug*/
