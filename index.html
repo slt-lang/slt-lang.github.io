@@ -19,76 +19,23 @@
     <main class="container">
         <div class="archive">
             <h1>SLThree</h1>
-                <p class="h1"><strong>SLThree</strong> (англ. <em>Script Language 3</em> &mdash; Скриптовый язык 3, "третий скриптовый") &mdash; язык программирования, базирующийся на платформе .NET Framework.
+                <p class="h1"><strong>SLThree</strong> (англ. <em>Script Language 3</em> &mdash; Скриптовый язык 3, "третий скриптовый") &mdash; язык программирования, базирующийся на платформе .NET Framework и тесно с ней интегрируемый.
                 <ol class="archive-nav">
                     <li class="archive-nav-h1">FAQ:</li>
-                    <li class="archive-nav-h2"><a href="#a-perfomance-otherlangs">§ Идея разработки</a></li>
-                    <li class="archive-nav-h2"><a href="#a-whynot">§ Почему не X</a></li>
-                    <li class="archive-nav-h3"><a href="#a-whynot-python">§ Почему не Python</a></li>
-                    <li class="archive-nav-h3"><a href="#a-whynot-dlr">§ Почему не DLR</a></li>
+                    <li class="archive-nav-h2"><a href="#a-features">§ Особенности</a></li>
+                    <li class="archive-nav-h2"><a href="#a-whynot-dlr">§ Почему не DLR</a></li>
                     <li class="archive-nav-h2"><a href="#a-perfomance-otherlangs">§ Сравнение производительности</a></li>
                     <li class="archive-nav-h3"><a href="#a-perfomance-slt">§ В пределах языка</a></li>
                     <li class="archive-nav-h2"><a href="#arefs">Ссылки</a></li>
                 </ol>
-                <h2 id="a-whynot">Почему не X</h2>
-                <h3 id="a-whynot-python">Почему не Python</h3>
+                <h2 id="a-features">Особенности</h2>
                 <ul>
-                    <li>Тяжело интегрировать с типами <strong>C#</strong> (про <strong>IronPython</strong> смотрите <a href="#a-whynot-dlr">Почему не DLR</a>)</li>
-                    <li>Медленный из-за отстутствия JIT</li>
-                    <li>Я вам не питонист.</li>
+                    <li>[В разработке] JIT-компиляция в .NET Framework IL (который впоследствии подхватывает JIT платформы)</li>
+                    <li>Опциональная типизация, типы указывать можно, но не обязательно</li>
+                    <li>Будучи динамическим, язык использует не DLR, а собственное архитектурное решение</li>
                 </ul>
-                <p class="h3">Два этих языка удовлетворяют двум главным требованиям: они простые и </p>
-                <h3 id="a-whynot-dlr">Почему не DLR</h3>
-
-                <div class="textbox">
-                    <div class="slt-code"><ol>
-                        <li class="slt-line"></li>
-                        <li class="slt-line"><span class="slt-type">i64</span> a = <span class="slt-digit">2</span> + <span class="slt-digit">2</span>;</li>
-                        <li class="slt-line"><span class="slt-type">i32</span> b = <span class="slt-digit">2i32</span> + <span class="slt-digit">0x2</span>;</li>
-                        <li class="slt-line"><span class="slt-type">list</span>&lt;<span class="slt-type">string</span>&gt; a = [<span class="slt-string">"str1"</span>, <span class="slt-string">"str2"</span>, <span class="slt-string">"str3"</span>, <span class="slt-string">"str4"</span>, <span class="slt-string">"str5"</span>, <span class="slt-string">"str6"</span>];</li>
-                        <li class="slt-line">range =  -<span class="slt-digit">10</span>..<span class="slt-digit">10</span>;</li>
-                        <li class="slt-line">a = <span class="slt-keyword1">new context </span>A : <span class="slt-type">i64</span> {  Value = a; Value = b; };</li>
-                        <li class="slt-line"><span class="slt-keyword1">context </span>A : <span class="slt-type">i64</span> { </li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;Value = x;</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;Value = y;</li>
-                        <li class="slt-line">}</li>
-                        <li class="slt-line"></li>
-                        <li class="slt-line"><span class="slt-keyword2">foreach</span> (<span class="slt-type">i64</span> x<span class="slt-keyword2"> in </span><span class="slt-digit">1</span>..<span class="slt-digit">10</span>) {</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;console.writeln(x);</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;console.writeln<<span class="slt-type">i64</span>, <span class="slt-type">i64</span>>(x, x);</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">if</span> (x == <span class="slt-digit">0</span>)</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">continue</span>;</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">else </span></li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">break</span>;</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">return</span> <span class="slt-digit">2</span> + <span class="slt-digit">2</span> * <span class="slt-digit">2</span>;</li>
-                        <li class="slt-line">}</li>
-                        <li class="slt-line">a = <span class="slt-keyword1">new </span><span class="slt-keyword1">using </span><span class="slt-type">i64</span>;</li>
-                        <li class="slt-line"><span class="slt-keyword1">using </span><span class="slt-type">i64</span><span class="slt-keyword1"> as </span>xxx;</li>
-                        <li class="slt-line"><span class="slt-keyword2">try</span> {</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;console.writeln(<span class="slt-string">"try"</span>);</li>
-                        <li class="slt-line">}<span class="slt-keyword2"> catch</span> {</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;console.writeln(<span class="slt-string">"catch"</span>);</li>
-                        <li class="slt-line">}<span class="slt-keyword2"> finally</span> {</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;console.writeln(<span class="slt-string">"finally"</span>);</li>
-                        <li class="slt-line">}</li>
-                        <li class="slt-line"><span class="slt-keyword1">new </span><span class="slt-type">any</span>(<span class="slt-digit">1</span>, <span class="slt-digit">2</span>, []);</li>
-                        <li class="slt-line"><span class="slt-keyword1">new </span><span class="slt-type">any</span>[<span class="slt-digit">10</span>];</li>
-                        <li class="slt-line">x = <span class="slt-keyword1">recursive</span> <span class="slt-keyword1">explicit</span> (a, b) => a + b;</li>
-                        <li class="slt-line">x = <span class="slt-keyword1">recursive</span> <span class="slt-keyword1">explicit</span> (<span class="slt-type">i64</span> a, <span class="slt-type">i64</span> b): <span class="slt-type">i64</span> => a + b;</li>
-                        <li class="slt-line">cast = <<span class="slt-type">T</span>>(<span class="slt-type">any</span> o): <span class="slt-type">T</span> => o as <span class="slt-type">T</span>;</li>
-                        <li class="slt-line"><span class="slt-type">string</span> interpolated = <span class="slt-string">$"<span class="slt-operator">{<span class="slt-digit">2</span>}</span> + <span class="slt-operator">{<span class="slt-digit">2</span>}</span> = <span class="slt-operator">{<span class="slt-digit">2</span> + <span class="slt-digit">2</span>}</span>"</span>;</li>
-                        <li class="slt-line"> @<span class="slt-type">Reflection</span>::Expression<<span class="slt-type">T1</span>, <span class="slt-type">T2</span>>(<span class="slt-type">arg1</span>, <span class="slt-type">arg2</span>);</li>
-                        <li class="slt-line"><span class="slt-type">dict</span> d = {</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-string">"a"</span>: <span class="slt-digit">1</span>,</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-string">"b"</span>: <span class="slt-digit">2</span>,</li>
-                        <li class="slt-line">};</li>
-                        </ol>
-                        </div>
-                        
-                        
-                    <span class="description">Код SLThree</span> <!-- optional -->
-                </div>
-
+                <h2 id="a-whynot-dlr">Почему не DLR</h2>
+                <p class="h3">Исходя из <a href="https://habr.com/ru/articles/466657/">данной статьи</a>, DLR при работе с COM-типами (для межязыкового взаимодействие того же IronPython и C# используется COM API) может вызывать утечки памяти при передачи dynamic'ов. Кроме того, организовать ту же опциональную типизацию с DLR было бы невозможно.</p>
                 <h2 id="a-perfomance-otherlangs">Сравнение производительности</h2>
                 <p class="h2">Измерения производительности проводились с помощью алгоритма <a href="https://en.wikipedia.org/wiki/Collatz_conjecture">гипотезы Коллатца</a> в интервале от 0 до 1000000.</p>
                 <table class="table floatimage-right">
@@ -102,7 +49,7 @@
                         </tr>
                         <tr>
                             <th>RAM</th>
-                            <td>DDR4 Dual-Channel 16 GB 3200 CL12</td>
+                            <td>DDR4 Dual-Channel 16 GB 3200 CL22</td>
                         </tr>
                         <tr>
                             <th>OS</th>
@@ -146,6 +93,10 @@
                             <td>1034 ms</td>
                         </tr>
                         <tr>
+                            <td>PascalABC.NET 3.9</td>
+                            <td>226 ms</td>
+                        </tr>
+                        <tr>
                             <td>C# 11</td>
                             <td>212 ms</td>
                         </tr>
@@ -166,20 +117,19 @@
                         <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;step = <span class="slt-digit">0</span>;</li>
                         <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">while</span> (index > <span class="slt-digit">1</span>)</li>
                         <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">if</span> (index % <span class="slt-digit">2</span> == <span class="slt-digit">0</span>) {</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index = index / <span class="slt-digit">2</span>;</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;step = step + <span class="slt-digit">1</span>;</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;}</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">else </span> {</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index = (<span class="slt-digit">3</span> * index + <span class="slt-digit">1</span>) / <span class="slt-digit">2</span>;</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;step = step + <span class="slt-digit">2</span>;</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index = index / <span class="slt-digit">2</span>;</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;step = step + <span class="slt-digit">1</span>;</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">else </span> {</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index = (<span class="slt-digit">3</span> * index + <span class="slt-digit">1</span>) / <span class="slt-digit">2</span>;</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;step = step + <span class="slt-digit">2</span>;</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li>
                         <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">return</span> step;</li>
                         <li class="slt-line">};</li>
                         <li class="slt-line"><span class="slt-keyword1">using </span><span class="slt-type">linq</span>;</li>
-                        <li class="slt-line"><span class="slt-digit">0</span>..<span class="slt-digit">1_000_000</span> |> linq.max(calc);</li>
+                        <li class="slt-line"><span class="slt-digit">0</span>..<span class="slt-digit">1_000_000</span> |> linq.<span class="slt-call">max</span>(calc);</li>
                         </ol>
-                    </div>
-                        
+                        </div>
                     <span class="description">Код на SLThree 0.6.0</span>
                 </div>
                 <div class="textbox">
@@ -188,21 +138,21 @@
                         <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-type">i64</span> step = <span class="slt-digit">0</span>;</li>
                         <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">while</span> (index > <span class="slt-digit">1</span>)</li>
                         <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">if</span> (index % <span class="slt-digit">2</span> == <span class="slt-digit">0</span>) {</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index = index / <span class="slt-digit">2</span>;</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;step = step + <span class="slt-digit">1</span>;</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;}</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">else </span> {</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index = (<span class="slt-digit">3</span> * index + <span class="slt-digit">1</span>) / <span class="slt-digit">2</span>;</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;step = step + <span class="slt-digit">2</span>;</li>
-                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index = index / <span class="slt-digit">2</span>;</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;step = step + <span class="slt-digit">1</span>;</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">else </span> {</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index = (<span class="slt-digit">3</span> * index + <span class="slt-digit">1</span>) / <span class="slt-digit">2</span>;</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;step = step + <span class="slt-digit">2</span>;</li>
+                        <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li>
                         <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">return</span> step;</li>
                         <li class="slt-line">};</li>
                         <li class="slt-line"><span class="slt-keyword1">using </span><span class="slt-type">jit</span>;</li>
                         <li class="slt-line"><span class="slt-keyword1">using </span><span class="slt-type">tlinq</span>;</li>
-                        <li class="slt-line">calc_opt = jit.opt(calc, self);</li>
-                        <li class="slt-line">&lt;<span class="slt-type">i64</span>&gt;<span class="slt-digit">0</span>..<span class="slt-digit">1_000_000</span> |> tlinq.max&lt;<span class="slt-type">i64</span>&gt;(calc_opt.CreateDelegate(@<span class="slt-type">System.Func</span>&lt;<span class="slt-type">i64</span>, <span class="slt-type">i64</span>&gt;));</li>
+                        <li class="slt-line">calc_opt = jit.<span class="slt-call">opt</span>(calc, <span class="slt-keyword1">self</span>);</li>
+                        <li class="slt-line">&lt;<span class="slt-type">i64</span>&gt;<span class="slt-digit">0</span>..<span class="slt-digit">1_000_000</span> |> tlinq.<span class="slt-call">max</span>&lt;<span class="slt-type">i64</span>&gt;(calc_opt.<span class="slt-call">CreateDelegate</span>(@<span class="slt-type">System.Func</span>&lt;<span class="slt-type">i64</span>, <span class="slt-type">i64</span>&gt;));</li>
                         </ol>
-                    </div>
+                        </div>
                         
                     <span class="description">Код на SLThree 0.7.0</span>
                 </div>

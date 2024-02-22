@@ -259,16 +259,24 @@ a:hover{
     color: #008000;
 }
 
-.slt-code .slt-keyword1, .slt-code .slt-type {
+.slt-code .slt-keyword1 {
     color: #0000FF;
 }
 
 .slt-code .slt-keyword2 {
-    color: #800080;
+    color: #8f08c4;
+}
+
+.slt-code .slt-type {
+    color: #2d91af;
+}
+
+.slt-code .slt-call {
+    color: #74531f;
 }
 
 .slt-code .slt-string {
-    color: #C10000;
+    color: #a31515;
 }
 
 .slt-code ol, .lang-code ol {
