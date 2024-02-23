@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset='utf-8'>
+    <title>Справка</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" href="slthree.ico"/>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <header>
+        <nav class="headmenu-nav">
+            <a href="index.html"><img class="headmenu-image" src="headlogo.png" alt="logo"/></a>
+            <ul class="headmenu-list">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="syntax.html">Справка</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="archive">
+            <h1>Синтаксис языка</h1>
+                <ol class="archive-nav">
+                    <li class="archive-nav-h1">Навигация:</li>
+                    <li class="archive-nav-h1"><a href="#a-expressions">§ Выражения</a></li>
+                        <li class="archive-nav-h2"><a href="#ae-assign">§ Присваивание</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-extassign">§ Расширенное присваивание</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-lvalues">§ lvalue-выражения</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-assigntyping">§ Определение типа переменной</a></li>
+                        <li class="archive-nav-h2"><a href="ae-methods">§ Методы</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-call">§ Вызов метода</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-contextarg">§ Передача контекста</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-methoddefinition">§ Определение метода</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-methodmodificators">§ Модификаторы</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-methodtyping">§ Типизация</a></li>
+                        <li class="archive-nav-h2"><a href="#ae-logical">§ Логические операции</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-comparison">§ Операции сравнения</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-andorxor">§ И, ИЛИ, ИСКЛ ИЛИ</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-is">§ Соответствие типу</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-ternary">§ Тернарная операция</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-nullcoalescing">§ Проверка на null</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-safeexpr">§ Безопасная операция</a></li>
+                        <li class="archive-nav-h2"><a href="#ae-arithmetic">§ Арифметические операции</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-addition">§ Сложение и вычитание</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-multiplying">§ Умножение, деление, остаток</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-brackets">§ Скобки</a></li>
+                        <li class="archive-nav-h2"><a href="#ae-memberaccess">§ Доступ к члену</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-nullconditional">§ Условие null</a></li>
+                        <li class="archive-nav-h2"><a href="#ae-typecast">§ Приведение к типу</a></li>
+                        <li class="archive-nav-h2"><a href="#ae-specialnames">§ Специальные имена</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-s-self">§ Специальное имя self</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-s-this">§ Специальное имя this</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-s-global">§ Специальное имя global</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-s-super">§ Специальное имя super</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-s-upper">§ Специальное имя upper</a></li>
+                        <li class="archive-nav-h2"><a href="#ae-creators">§ Инициализаторы</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-ctorcall">§ Вызов конструктора</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-creator-array">§ Создание массива</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-creator-tuple">§ Создание кортежа</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-craetor-list">§ Создание списка</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-creator-dict">§ Создание словаря</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-creator-range">§ Создание диапазона</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-creator-context">§ Создание контекста</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-creator-using">§ Создание using</a></li>
+                        <li class="archive-nav-h2"><a href="#ae-choosers">§ Операции случайного выбора</a></li>
+                        <li class="archive-nav-h2"><a href="#ae-reflection">§ Операции рефлексии</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-typeof">§ Получение типа</a></li>
+                            <li class="archive-nav-h3"><a href="#ae-getoverload">§ Получение конкретной перегрузки</a></li>
+                    <li class="archive-nav-h1"><a href="#a-statements">§ Утверждения</a></li>
+                </ol>
+            <h1 id="a-expressions">Выражения</h1>
+                <h2 id="ae-priorities">Приоритеты</h2>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Группа</th>
+                            <th>Выражения</th>
+                        </tr>
+                        <tr>
+                            <td>binary 9</td>
+                            <td>=, +=, -=, *=, /=, &=, │=, ^=</br>
+                                =>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ternary</td>
+                            <td>x ? y : z</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2 id="ae-assign">Присваивание</h2>
+                    <h3 id="ae-extassign">Расширенное присваивание</h3>
+                    <h3 id="ae-lvalues">lvalue-выражения</h3>
+                    <h3 id="ae-assigntyping">Определение типа переменной</h3>
+                <h2 id="ae-methods">Методы</h2>
+                    <h3 id="ae-call">Вызов метода</h3>
+                    <h3 id="ae-contextarg">Передача контекста</h3>
+                    <h3 id="ae-methoddefinition">Определение метода</h3>
+                    <h3 id="ae-methodmodificators">Модификаторы</h3>
+                    <h3 id="ae-methodtyping">Типизация</h3>
+                <h2 id="ae-logical">Логические операции</h2>
+                    <h3 id="ae-comparison">Операции сравнения</h3>
+                    <h3 id="ae-andorxor">И, ИЛИ, ИСЛК ИЛИ</h3>
+                    <h3 id="ae-is">Соответствие типу</h3>
+                    <h3 id="ae-ternary">Тернарная операция</h3>
+                    <h3 id="ae-nullcoalescing">Проверка на null</h3>
+                    <h3 id="ae-safeexpr">Безопасная операция</h3>
+                <h2 id="ae-arithmetic">Арифметические операции</h2>
+                    <h3 id="ae-addition">Сложение и вычитание</h3>
+                    <h3 id="ae-multiplying">Умножение, деление, остаток</h3>
+                    <h3 id="ae-brackets">Скобки</h3>
+                <h2 id="ae-memberaccess">Доступ к члену</h2>
+                    <h3 id="ae-nullconditional">Условие null</h3>
+                <h2 id="ae-typecast">Приведение к типу</h2>
+                <h2 id="ae-specialnames">Специальные имена</h2>
+                    <h3 id="ae-s-self">Специальное имя self</h3>
+                    <h3 id="ae-s-this">Специальное имя this</h3>
+                    <h3 id="ae-s-global">Специальное имя global</h3>
+                    <h3 id="ae-s-super">Специальное имя super</h3>
+                    <h3 id="ae-s-upper">Специальное имя upper</h3>
+                <h2 id="ae-creators">Инициализаторы</h2>
+                    <h3 id="ae-ctorcall">Вызов конструктора</h3>
+                    <h3 id="ae-creator-array">Создание массива</h3>
+                    <h3 id="ae-creator-tuple">Создание кортежа</h3>
+                    <h3 id="ae-craetor-list">Создание списка</h3>
+                    <h3 id="ae-creator-dict">Создание словаря</h3>
+                    <h3 id="ae-creator-range">Создание диапазона</h3>
+                    <h3 id="ae-creator-context">Создание контекста</h3>
+                    <h3 id="ae-creator-using">Создание using</h3>
+                <h2 id="ae-choosers">Операции случайного выбора</h2>
+                <h2 id="ae-reflection">Операции рефлексии</h2>
+                    <h3 id="ae-typeof">Получение типа</h3>
+                    <h3 id="ae-getoverload">Получение конкретной перегрузки</h3>
+            <h1 id="a-statements">Утверждения</h1>
+                <h2>Утверждение-выражение</h2>
+                <h2>Условный оператор</h2>
+                <h2>Циклы</h2>
+                    <h3>Цикл while</h3>
+                    <h3>Цикл foreach</h3>
+                    <h3>break и continue</h3>
+                <h2>Оператор return</h2>
+                <h2>Оператор using</h2>
+                <h2>Оператор context</h2>
+                <h2>Обработка исключений</h2>
+        </div>
+    </main>
+    <footer class="footinfo">
+        <div class="container">
+            <span><a class="footinfo-ref ref-github" href="https://AIexandrKotov.github.io">aiexandrkotov.github.io</a></span>
+        </div>
+    </footer>
+</body>
+</html>
