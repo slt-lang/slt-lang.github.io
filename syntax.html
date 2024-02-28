@@ -6,6 +6,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="icon" href="slthree.ico"/>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='syntax.css'>
 </head>
 <body>
     <header>
@@ -23,6 +24,7 @@
                 <ol class="archive-nav">
                     <li class="archive-nav-h1">Навигация:</li>
                     <li class="archive-nav-h1"><a href="#a-expressions">§ Выражения</a></li>
+                        <li class="archive-nav-h2"><a href="#ae-literals">§ Литералы</a></li>
                         <li class="archive-nav-h2"><a href="#ae-assign">§ Присваивание</a></li>
                             <li class="archive-nav-h3"><a href="#ae-extassign">§ Расширенное присваивание</a></li>
                             <li class="archive-nav-h3"><a href="#ae-lvalues">§ lvalue-выражения</a></li>
@@ -88,6 +90,75 @@
                         </tr>
                     </tbody>
                 </table>
+                <h2 id="ae-literals">Литералы</h2>
+                    <h3 id="ae-numericliterals">Числовые</h3>
+                    <ul>
+                        <li>Все числа поддерживают _ в описании</li>
+                        <li>Можно писать целые числа в двоичном, восмьеричном и шестнадцатричном виде с помощью префиксов: 0b101, 0o123456, 0xFF</li>
+                    </ul>
+                    <table class="table numliterals">
+                        <tbody>
+                            <tr>
+                                <th>Имя типа</th>
+                                <th>Суффикс</th>
+                                <th>Битность</th>
+                                <th>Суффикс<br>обязателен</th>
+                                <th>Пример</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">f64</td>
+                                <td rowspan="4">64</td>
+                                <td rowspan="2">Нет</td>
+                                <td>10.0, 2.0f64, 0f64</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">i64</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>f64</td>
+                                <td>%</td>
+                                <td rowspan="10">Да</td>
+                                <td>10%</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">u64</td>
+                                <td>10u64</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">f32</td>
+                                <td rowspan="3">32</td>
+                                <td>0.0f32</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">i32</td>
+                                <td>10i32</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">u32</td>
+                                <td>10u32</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">i16</td>
+                                <td rowspan="2">16</td>
+                                <td>10i16</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">u16</td>
+                                <td>10u16</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">i8</td>
+                                <td rowspan="2">8</td>
+                                <td>10i8</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">u8</td>
+                                <td>10u8</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3 id="ae-stringliterals">Строковые</h3>
                 <h2 id="ae-assign">Присваивание</h2>
                     <h3 id="ae-extassign">Расширенное присваивание</h3>
                     <h3 id="ae-lvalues">lvalue-выражения</h3>
