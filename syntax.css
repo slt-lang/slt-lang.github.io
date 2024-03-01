@@ -19,5 +19,15 @@ div.priorities {
     display: flex;
 }
 div.priorities table {
+    width: 100%;
     margin: 3px;
+}
+
+@media screen and (max-width: 980px) {
+    div.priorities{
+        margin: 0 auto;
+    }
+    .numliterals {
+        margin: 0 auto;
+    }
 }
