@@ -1,6 +1,17 @@
 table.numliterals tr td {
     text-align: center;
 }
-table.numliterals {
-    width: 100%;
+table.priorities tr td.ops a {
+    font-family: monospace;
+    background-color: #fff5ea;
+}
+table.priorities tr td.ops span.splitter {
+    display: block;
+    border-top: #ffbc7a dashed 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+table.priorities tr td.ops span.union {
+    font-family: monospace;
+    font-size: 133%;
 }

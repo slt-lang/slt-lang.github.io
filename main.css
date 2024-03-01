@@ -185,6 +185,12 @@ a:hover{
 .archive .h3{
     padding-left: 0px;
 }
+.archive .table.h2{
+    margin: 10px 10px 10px 10px;
+}
+.archive .table.h3{
+    margin: 20px 20px 20px 20px;
+}
 
 .archive ul{
     padding-left: 40px;
