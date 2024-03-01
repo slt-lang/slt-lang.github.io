@@ -26,6 +26,10 @@ div.priorities table {
 @media screen and (max-width: 980px) {
     div.priorities{
         margin: 0 auto;
+        display: block;
+    }
+    .numliterals th {
+        font-size: 60%;
     }
     .numliterals {
         margin: 0 auto;
