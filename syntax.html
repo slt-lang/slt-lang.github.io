@@ -10,354 +10,371 @@
 </head>
 <body>
     <header>
-        <nav class="headmenu-nav">
-            <a href="index.html"><img class="headmenu-image" src="headlogo.png" alt="logo"/></a>
-            <ul class="headmenu-list">
+        <nav>
+            <a href="index.html"><img src="headlogo.png" alt="logo"/></a>
+            <ul>
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="syntax.html">Справка</a></li>
             </ul>
         </nav>
     </header>
-    <main class="container">
-        <div class="archive">
+    <main>
+        <div class="container">
             <h1>Синтаксис языка</h1>
-                <ol class="archive-nav">
-                    <li class="archive-nav-h1">Навигация:</li>
-                    <li class="archive-nav-h1"><a href="#a-expressions">§ Выражения</a></li>
-                        <li class="archive-nav-h2"><a href="#ae-literals">§ Литералы</a></li>
-                        <li class="archive-nav-h2"><a href="#ae-assign">§ Присваивание</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-extassign">§ Расширенное присваивание</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-lvalues">§ lvalue-выражения</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-assigntyping">§ Определение типа переменной</a></li>
-                        <li class="archive-nav-h2"><a href="ae-methods">§ Методы</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-call">§ Вызов метода</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-contextarg">§ Передача контекста</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-methoddefinition">§ Определение метода</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-methodmodificators">§ Модификаторы</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-methodtyping">§ Типизация</a></li>
-                        <li class="archive-nav-h2"><a href="#ae-logical">§ Логические операции</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-comparison">§ Операции сравнения</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-andorxor">§ И, ИЛИ, ИСКЛ ИЛИ</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-is">§ Соответствие типу</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-ternary">§ Тернарная операция</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-nullcoalescing">§ Проверка на null</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-safeexpr">§ Безопасная операция</a></li>
-                        <li class="archive-nav-h2"><a href="#ae-arithmetic">§ Арифметические операции</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-addition">§ Сложение и вычитание</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-multiplying">§ Умножение, деление, остаток</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-bitops">§ Побитовые операции</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-brackets">§ Скобки</a></li>
-                        <li class="archive-nav-h2"><a href="#ae-memberaccess">§ Доступ к члену</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-nullconditional">§ Условие null</a></li>
-                        <li class="archive-nav-h2"><a href="#ae-indexator">§ Индексаторы</a></li>
-                        <li class="archive-nav-h2"><a href="#ae-typecast">§ Приведение к типу</a></li>
-                        <li class="archive-nav-h2"><a href="#ae-specialnames">§ Специальные имена</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-s-self">§ self</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-s-this">§ this</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-s-global">§ global</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-s-super">§ super</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-s-upper">§ upper</a></li>
-                        <li class="archive-nav-h2"><a href="#ae-creators">§ Инициализаторы</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-ctorcall">§ Вызов конструктора</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-creator-array">§ Создание массива</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-creator-tuple">§ Создание кортежа</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-craetor-list">§ Создание списка</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-creator-dict">§ Создание словаря</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-creator-range">§ Создание диапазона</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-creator-context">§ Создание контекста</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-creator-using">§ Создание using</a></li>
-                        <li class="archive-nav-h2"><a href="#ae-choosers">§ Операции случайного выбора</a></li>
-                        <li class="archive-nav-h2"><a href="#ae-reflection">§ Операции рефлексии</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-typeof">§ Получение типа</a></li>
-                            <li class="archive-nav-h3"><a href="#ae-getoverload">§ Получение конкретной перегрузки</a></li>
-                    <li class="archive-nav-h1"><a href="#a-statements">§ Утверждения</a></li>
-                </ol>
+                <nav>
+                    <span>Навигация:</span>
+                    <h1><a href="#a-expressions">§ Выражения</a></h1>
+                        <h2><a href="#ae-literals">§ Литералы</a></h2>
+                        <h2><a href="#ae-assign">§ Присваивание</a></h2>
+                            <h3><a href="#ae-extassign">§ Расширенное присваивание</a></h3>
+                            <h3><a href="#ae-lvalues">§ lvalue-выражения</a></h3>
+                            <h3><a href="#ae-assigntyping">§ Определение типа переменной</a></h3>
+                        <h2><a href="ae-methods">§ Методы</a></h2>
+                            <h3><a href="#ae-call">§ Вызов метода</a></h3>
+                            <h3><a href="#ae-contextarg">§ Передача контекста</a></h3>
+                            <h3><a href="#ae-methoddefinition">§ Определение метода</a></h3>
+                            <h3><a href="#ae-methodmodificators">§ Модификаторы</a></h3>
+                            <h3><a href="#ae-methodtyping">§ Типизация</a></h3>
+                        <h2><a href="#ae-logical">§ Логические операции</a></h2>
+                            <h3><a href="#ae-comparison">§ Операции сравнения</a></h3>
+                            <h3><a href="#ae-andorxor">§ И, ИЛИ, ИСКЛ ИЛИ</a></h3>
+                            <h3><a href="#ae-is">§ Соответствие типу</a></h3>
+                            <h3><a href="#ae-ternary">§ Тернарная операция</a></h3>
+                            <h3><a href="#ae-nullcoalescing">§ Проверка на null</a></h3>
+                            <h3><a href="#ae-safeexpr">§ Безопасная операция</a></h3>
+                        <h2><a href="#ae-arithmetic">§ Арифметические операции</a></h2>
+                            <h3><a href="#ae-addition">§ Сложение и вычитание</a></h3>
+                            <h3><a href="#ae-multiplying">§ Умножение, деление, остаток</a></h3>
+                            <h3><a href="#ae-bitops">§ Побитовые операции</a></h3>
+                            <h3><a href="#ae-brackets">§ Скобки</a></h3>
+                        <h2><a href="#ae-memberaccess">§ Доступ к члену</a></h2>
+                            <h3><a href="#ae-nullconditional">§ Условие null</a></h3>
+                        <h2><a href="#ae-indexator">§ Индексаторы</a></h2>
+                        <h2><a href="#ae-typecast">§ Приведение к типу</a></h2>
+                        <h2><a href="#ae-specialnames">§ Специальные имена</a></h2>
+                            <h3><a href="#ae-s-self">§ self</a></h3>
+                            <h3><a href="#ae-s-this">§ this</a></h3>
+                            <h3><a href="#ae-s-global">§ global</a></h3>
+                            <h3><a href="#ae-s-super">§ super</a></h3>
+                            <h3><a href="#ae-s-upper">§ upper</a></h3>
+                        <h2><a href="#ae-creators">§ Инициализаторы</a></h2>
+                            <h3><a href="#ae-ctorcall">§ Вызов конструктора</a></h3>
+                            <h3><a href="#ae-creator-array">§ Создание массива</a></h3>
+                            <h3><a href="#ae-creator-tuple">§ Создание кортежа</a></h3>
+                            <h3><a href="#ae-craetor-list">§ Создание списка</a></h3>
+                            <h3><a href="#ae-creator-dict">§ Создание словаря</a></h3>
+                            <h3><a href="#ae-creator-range">§ Создание диапазона</a></h3>
+                            <h3><a href="#ae-creator-context">§ Создание контекста</a></h3>
+                            <h3><a href="#ae-creator-using">§ Создание using</a></h3>
+                        <h2><a href="#ae-choosers">§ Операции случайного выбора</a></h2>
+                        <h2><a href="#ae-reflection">§ Операции рефлексии</a></h2>
+                            <h3><a href="#ae-typeof">§ Получение типа</a></h3>
+                            <h3><a href="#ae-getoverload">§ Получение конкретной перегрузки</a></h3>
+                    <h1><a href="#a-statements">§ Утверждения</a></h1>
+                </nav>
             <h1 id="a-expressions">Выражения</h1>
                 <h2 id="ae-priorities">Приоритеты</h2>
-                <table class="table h2 priorities">
-                    <tbody>
-                        <tr>
-                            <th>Группа</th>
-                            <th>Выражения</th>
-                        </tr>
-                        <tr>
-                            <td>binary 9</td>
-                            <td class="ops">
-                                <span class="union">
-                                    <a href="#ae-assign">=</a>
-                                    <a href="#ae-extassign">+=</a>
-                                    <a href="#ae-extassign">-=</a>
-                                    <a href="#ae-extassign">*=</a>
-                                    <a href="#ae-extassign">/=</a>
-                                    <a href="#ae-extassign">&=</a>
-                                    <a href="#ae-extassign">|=</a>
-                                    <a href="#ae-extassign">^=</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-methoddefinition">... => ...</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>ternary</td>
-                            <td class="ops">
-                                <span class="union">
-                                    <a href="#ae-ternary">x ? y : z</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>binary 8</td>
-                            <td class="ops">
-                                <span class="union">
-                                    <a href="#ae-nullcoalescing">x ?? y</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-safeexpr">x -? y</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>binary 7</td>
-                            <td class="ops">
-                                <span class="union">
-                                    <a href="#ae-andorxor">||</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>binary 6</td>
-                            <td class="ops">
-                                <span class="union">
-                                    <a href="#ae-andorxor">&&</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>binary 5</td>
-                            <td class="ops">
-                                <span class="union">
-                                    <a href="#ae-bitops">|</a>
-                                    <a href="#ae-bitops">&</a>
-                                    <a href="#ae-bitops">^</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>binary 4</td>
-                            <td class="ops">
-                                <span class="union">
-                                    <a href="#ae-comparison">==</a>
-                                    <a href="#ae-comparison">!=</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-is">is</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>binary 3</td>
-                            <td class="ops">
-                                <span class="union">
-                                    <a href="#ae-comparison">&gt;=</a>
-                                    <a href="#ae-comparison">&lt;=</a>
-                                    <a href="#ae-comparison">&gt;</a>
-                                    <a href="#ae-comparison">&lt;</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>binary 2</td>
-                            <td class="ops">
-                                <span class="union">
-                                    <a href="#ae-addition">+</a>
-                                    <a href="#ae-addition">-</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>binary 1</td>
-                            <td class="ops">
-                                <span class="union">
-                                    <a href="#ae-multiplying">*</a>
-                                    <a href="#ae-multiplying">/</a>
-                                    <a href="#ae-multiplying">%</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>binary 0</td>
-                            <td class="ops">
-                                <span class="union">
-                                    <a href="#ae-typecast">as</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-getoverload">::</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>unary</td>
-                            <td class="ops">
-                                <span class="union">
-                                    <a href="#ae-addition">+</a>
-                                    <a href="#ae-addition">-</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-choosers">*</a>
-                                    <a href="#ae-choosers">^</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-bitops">~</a>
-                                    <a href="#ae-comparison">!</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-typeof">@</a>
-                                    <a href="#ae-typeof">@@</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>primary</td>
-                            <td class="ops">
-                                <span class="union">
-                                    <a href="#ae-memberaccess">x.y</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-call">x(...)</a>
-                                    <a href="#ae-call">x&lt;T&gt;(...)</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-indexator">x[...]</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-nullconditional">x?(...)</a>
-                                    <a href="#ae-nullconditional">x?[...]</a>
-                                    <a href="#ae-nullconditional">x?.y</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-creator-range">x..y</a>
-                                    <a href="#ae-creator-range">&lt;T&gt;x..y</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-ctorcall">new T(...)</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-creator-context">new context</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-creator-using">new using T</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-creator-array">new T[...]</a>
-                                    <a href="#ae-creator-array">-[...]</a>
-                                    <a href="#ae-creator-array">&lt;T&gt;-[...]</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-creator-tuple">(x, ...)</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-craetor-list">[...]</a>
-                                    <a href="#ae-craetor-list">&lt;T&gt;[...]</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-creator-dict">{...}</a>
-                                    <a href="#ae-creator-dict">&lt;TK, TV&gt;{...}</a>
-                                </span>
-                                <br><span class="splitter"></span>
-                                <span class="union">
-                                    <a href="#ae-brackets">(...)</a>
-                                </span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="h2">
+                    <div class="priorities">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Группа</th>
+                                    <th>Выражения</th>
+                                </tr>
+                                <tr>
+                                    <td>binary 9</td>
+                                    <td class="ops">
+                                        <span class="union">
+                                            <a href="#ae-assign">=</a>
+                                            <a href="#ae-extassign">+=</a>
+                                            <a href="#ae-extassign">-=</a>
+                                            <a href="#ae-extassign">*=</a>
+                                            <a href="#ae-extassign">/=</a>
+                                            <a href="#ae-extassign">&=</a>
+                                            <a href="#ae-extassign">|=</a>
+                                            <a href="#ae-extassign">^=</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-methoddefinition">... => ...</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>ternary</td>
+                                    <td class="ops">
+                                        <span class="union">
+                                            <a href="#ae-ternary">x ? y : z</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>binary 8</td>
+                                    <td class="ops">
+                                        <span class="union">
+                                            <a href="#ae-nullcoalescing">x ?? y</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-safeexpr">x -? y</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>binary 7</td>
+                                    <td class="ops">
+                                        <span class="union">
+                                            <a href="#ae-andorxor">||</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>binary 6</td>
+                                    <td class="ops">
+                                        <span class="union">
+                                            <a href="#ae-andorxor">&&</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>binary 5</td>
+                                    <td class="ops">
+                                        <span class="union">
+                                            <a href="#ae-bitops">|</a>
+                                            <a href="#ae-bitops">&</a>
+                                            <a href="#ae-bitops">^</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>binary 4</td>
+                                    <td class="ops">
+                                        <span class="union">
+                                            <a href="#ae-comparison">==</a>
+                                            <a href="#ae-comparison">!=</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-is">is</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>binary 3</td>
+                                    <td class="ops">
+                                        <span class="union">
+                                            <a href="#ae-comparison">&gt;=</a>
+                                            <a href="#ae-comparison">&lt;=</a>
+                                            <a href="#ae-comparison">&gt;</a>
+                                            <a href="#ae-comparison">&lt;</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>binary 2</td>
+                                    <td class="ops">
+                                        <span class="union">
+                                            <a href="#ae-addition">+</a>
+                                            <a href="#ae-addition">-</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>binary 1</td>
+                                    <td class="ops">
+                                        <span class="union">
+                                            <a href="#ae-multiplying">*</a>
+                                            <a href="#ae-multiplying">/</a>
+                                            <a href="#ae-multiplying">%</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>binary 0</td>
+                                    <td class="ops">
+                                        <span class="union">
+                                            <a href="#ae-typecast">as</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-getoverload">::</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Группа</th>
+                                    <th>Выражения</th>
+                                </tr>
+                                <tr>
+                                    <td>unary</td>
+                                    <td class="ops">
+                                        <span class="union">
+                                            <a href="#ae-addition">+</a>
+                                            <a href="#ae-addition">-</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-choosers">*</a>
+                                            <a href="#ae-choosers">^</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-bitops">~</a>
+                                            <a href="#ae-comparison">!</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-typeof">@</a>
+                                            <a href="#ae-typeof">@@</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>primary</td>
+                                    <td class="ops">
+                                        <span class="union">
+                                            <a href="#ae-memberaccess">x.y</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-call">x(...)</a>
+                                            <a href="#ae-call">x&lt;T&gt;(...)</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-indexator">x[...]</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-nullconditional">x?(...)</a>
+                                            <a href="#ae-nullconditional">x?[...]</a>
+                                            <a href="#ae-nullconditional">x?.y</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-creator-range">x..y</a>
+                                            <a href="#ae-creator-range">&lt;T&gt;x..y</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-ctorcall">new T(...)</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-creator-context">new context</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-creator-using">new using T</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-creator-array">new T[...]</a>
+                                            <a href="#ae-creator-array">-[...]</a>
+                                            <a href="#ae-creator-array">&lt;T&gt;-[...]</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-creator-tuple">(x, ...)</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-craetor-list">[...]</a>
+                                            <a href="#ae-craetor-list">&lt;T&gt;[...]</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-creator-dict">{...}</a>
+                                            <a href="#ae-creator-dict">&lt;TK, TV&gt;{...}</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-brackets">(...)</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                
                 <h2 id="ae-literals">Литералы</h2>
                     <h3 id="ae-numericliterals">Числовые</h3>
-                    <ul>
-                        <li>Все числа поддерживают _ в описании</li>
-                        <li>Можно писать целые числа в двоичном, восмьеричном и шестнадцатричном виде с помощью префиксов: 0b101, 0o123456, 0xFF</li>
-                    </ul>
-                    <table class="table h3 numliterals">
-                        <tbody>
-                            <tr>
-                                <th>Имя типа</th>
-                                <th>Суффикс</th>
-                                <th>Битность</th>
-                                <th>Суффикс<br>обязателен</th>
-                                <th>Пример</th>
-                            </tr>
-                            <tr>
-                                <td colspan="2">f64</td>
-                                <td rowspan="4">64</td>
-                                <td rowspan="2">Нет</td>
-                                <td>10.0, 2.0f64, 0f64</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">i64</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>f64</td>
-                                <td>%</td>
-                                <td rowspan="10">Да</td>
-                                <td>10%</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">u64</td>
-                                <td>10u64</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">f32</td>
-                                <td rowspan="3">32</td>
-                                <td>0.0f32</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">i32</td>
-                                <td>10i32</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">u32</td>
-                                <td>10u32</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">i16</td>
-                                <td rowspan="2">16</td>
-                                <td>10i16</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">u16</td>
-                                <td>10u16</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">i8</td>
-                                <td rowspan="2">8</td>
-                                <td>10i8</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">u8</td>
-                                <td>10u8</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="h3">
+                        <ul>
+                            <li>Все числа поддерживают _ в описании</li>
+                            <li>Можно писать целые числа в двоичном, восмьеричном и шестнадцатричном виде с помощью префиксов: 0b101, 0o123456, 0xFF</li>
+                        </ul>
+                        <table class="numliterals">
+                            <tbody>
+                                <tr>
+                                    <th>Имя типа</th>
+                                    <th>Суффикс</th>
+                                    <th>Битность</th>
+                                    <th>Суффикс<br>обязателен</th>
+                                    <th>Пример</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">f64</td>
+                                    <td rowspan="4">64</td>
+                                    <td rowspan="2">Нет</td>
+                                    <td>10.0, 2.0f64, 0f64</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">i64</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>f64</td>
+                                    <td>%</td>
+                                    <td rowspan="10">Да</td>
+                                    <td>10%</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">u64</td>
+                                    <td>10u64</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">f32</td>
+                                    <td rowspan="3">32</td>
+                                    <td>0.0f32</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">i32</td>
+                                    <td>10i32</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">u32</td>
+                                    <td>10u32</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">i16</td>
+                                    <td rowspan="2">16</td>
+                                    <td>10i16</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">u16</td>
+                                    <td>10u16</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">i8</td>
+                                    <td rowspan="2">8</td>
+                                    <td>10i8</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">u8</td>
+                                    <td>10u8</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
                     <h3 id="ae-stringliterals">Строковые</h3>
                 <h2 id="ae-assign">Присваивание</h2>
                     <h3 id="ae-extassign">Расширенное присваивание</h3>
@@ -417,9 +434,9 @@
                 <h2>Обработка исключений</h2>
         </div>
     </main>
-    <footer class="footinfo">
+    <footer>
         <div class="container">
-            <span><a class="footinfo-ref ref-github" href="https://AIexandrKotov.github.io">aiexandrkotov.github.io</a></span>
+            <span><a style="color: #400080" href="https://AIexandrKotov.github.io">aiexandrkotov.github.io</a></span>
         </div>
     </footer>
 </body>

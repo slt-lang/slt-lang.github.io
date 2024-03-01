@@ -1,34 +1,33 @@
 *{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 /*header*/
-ul.headmenu-list{
+header > nav > ul{
     list-style-type: none;
 }
-.headmenu-nav *{
+header > nav *{
     font-size: 0;
 }
-.headmenu-nav{
+header > nav{
     margin: 0 auto;
     text-align: center;
 }
-.headmenu-list{
+header > nav > ul{
     border-top: 2px #cc6600 solid;
     border-bottom: 2px #cc6600 solid;
 }
-.headmenu-list li{
+header > nav > ul > li{
     display: inline-block;
     width: 225px;
 }
-.headmenu-list a:hover{
-    background-color: #cc6600;
-    color: white;
+header > nav > a{
+    pointer-events: fill;
 }
-.headmenu-list a{
+header > nav > ul > li > a{
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
@@ -40,8 +39,9 @@ ul.headmenu-list{
     width: 100%;
     display: block;
     padding: 4px 0;
+    animation: none;
 }
-.headmenu-image{
+header > nav > a > img{
     text-align: center;
     display: block;
     margin: 0 auto;
@@ -49,7 +49,7 @@ ul.headmenu-list{
 }
 
 /*footer*/
-.footinfo{
+footer {
     clear: both;
     width: auto;
     margin: 0 auto;
@@ -59,19 +59,18 @@ ul.headmenu-list{
     padding-bottom: 10px;
     color: #cc6600;
 }
-.footinfo-ref{
+footer > div > span > a{
     text-decoration: none;
     font-weight: bold;
 }
 
 /*main*/
-main.container, main .container{
+main .container{
     margin-top: 10px;
     margin-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
-}
-
+} 
 .floatimage-center{
     display: block;
     margin: 7px auto;
@@ -113,52 +112,27 @@ a:hover{
     100%{ color: #cc6600; background-color: transparent }
 }
 
-/*index*/
-.index h2.index-head{
-    font-weight: bold;
-}
-.index .index-cell h2{
-    color:#cc6600;
-    font-weight: bold;
-    line-height: 1em;
-}
-.index .index-main{
-    width: 80%;
-    text-align: center;
-}
-.index .index-updates{
-    width: 20%;
-    padding-left: 10px;
-    margin-left: 10px;
-    border-left: #ffbc7a solid 1px;
-}
-.index .index-updates li{
-    list-style-position: inside;
-}
-.index-row{
-    display: flex;
-}
 
-/*archive-wiki*/
-.archive *{
+main *{
     line-height: 1.5em;
 }
-.archive p{
+main p{
     text-indent: 1em;
     margin-top: 5px;
     margin-bottom: 5px;
 }
-.archive h1, .archive h2, .archive h3, .archive span.h1, .archive span.h2, .archive span.h3{
+main h1, main h2, main h3, main span.h1, main span.h2, main span.h3{
     border-bottom: 1px solid #ffbc7a;
     margin-top: 5px;
     margin-bottom: 10px;
     text-indent: 10px;
     overflow: hidden;
 }
-.archive h3{
+main h3{
     margin-left: 15px;
 }
-.archive-nav{
+
+main nav {
     margin: 15px;
     width: fit-content;
     padding: 5px 10px;
@@ -166,70 +140,64 @@ a:hover{
     background-color: #fff5ea;
     list-style-type: none;
 }
-.archive .archive-nav-h1{
+main nav > span {
+    border: 0;
     padding: 3px 0px;
     padding-left: 0px;
     font-weight: bold;
 }
-.archive .archive-nav-h2{
+main nav > h1, main nav > h2, main nav > h3, main nav > h4, main nav > h5, main nav > h6{
+    margin: 0;
+    font-size: 100%;
+    border: 0;
+}
+main nav > h1 {
+    padding: 3px 0px;
+    padding-left: 0px;
+}
+main nav > h2 {
     padding: 2px 0px;
     padding-left: 20px;
 }
-.archive .archive-nav-h3{
+main nav > h3 {
     padding: 1px 0px;
     padding-left: 50px;
 }
-.archive .h2{
-    padding-left: 0px;
-}
-.archive .h3{
-    padding-left: 0px;
-}
-.archive .table.h2{
-    margin: 10px 10px 10px 10px;
-}
-.archive .table.h3{
-    margin: 20px 20px 20px 20px;
+main nav > h4 {
+    padding: 0px 0px;
+    padding-left: 80px;
 }
 
-.archive ul{
-    padding-left: 40px;
-}
-.archive ul li{
-    margin: 3px 0px;
-}
-
-.archive .tablemaxwidth {
-    width: 100%;
-}
-.archive .table td {
+main table td {
     border: 1px solid #ffbc7a;
     border-collapse: collapse;
     padding: 3px 5px;
 }
-.archive .table th {
+main table th {
     background-color: #fff5ea;
     /*color: #cc6600;*/
     border: 1px solid #ffbc7a;
     border-collapse: collapse;
     padding: 3px 10px;
 }
-.archive .table {
+main table, main div.textbox {
+    margin-top: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ffbc7a;
+}
+
+main table {
     border-collapse: collapse;
     padding: 3px 5px;
 }
-
-.archive div.textbox {
+main div.textbox {
     padding: 5px;
-    border: 1px solid #ffbc7a;
     background-color: #fff5ea;
     list-style-type: none;
-    margin: 10px 3px;
     overflow: hidden;
 }
 
-.archive div.textbox div, .archive div.textbox code {
+main div.textbox div, main div.textbox code {
     display: block;
     font-size: 90%;
     background-color: white;
@@ -240,7 +208,7 @@ a:hover{
     overflow-y: scroll;
     max-height: 30em;
 }
-.archive div.textbox span.description{ /*--- TEXT UNDER ---*/
+main div.textbox span.description{ /*--- TEXT UNDER ---*/
     display: block;
     font-size: 90%;
     color: black;
@@ -248,301 +216,20 @@ a:hover{
     font-weight: bold;
 }
 
-/* SLT-CODE */
-.archive .slt-code *, .archive .lang-code{
-    font-family: monospace;
-    font-size: 14px;
-}
-.slt-code .slt-operator {
-    color: black;
-}
-
-.slt-code .slt-comment {
-    color: #808080;
-}
-
-.slt-code .slt-digit {
-    color: #008000;
-}
-
-.slt-code .slt-keyword1 {
-    color: #0000FF;
-}
-
-.slt-code .slt-keyword2 {
-    color: #8f08c4;
-}
-
-.slt-code .slt-type {
-    color: #2d91af;
-}
-
-.slt-code .slt-call {
-    color: #74531f;
-}
-
-.slt-code .slt-string {
-    color: #a31515;
-}
-
-.slt-code ol, .lang-code ol {
-    list-style-type: decimal;
-    padding-left: 50px;
-    display: block;
-    background-color: #fffbf2;
-}
-
-.slt-code li, .lang-code li {
-    display: list-item;
-    background-color: white;
-    padding-left: 10px;
-}
-/* SLT-CODE */
-
-.archive div.images {
-    display: flex;
-}
-
-.archive div.images div.imagebox{
-    display: table-cell;
-    height: min-content;
-    width: 100%;
-    flex: content;
-}
-.archive div.images div.imagebox img{
-    width: 100%;
-}
-
-.archive div.imagebox {
-    width: 23em;
-    padding: 5px;
-    border: 1px solid #ffbc7a;
-    background-color: #fff5ea;
-    list-style-type: none;
-    margin: 10px 3px;
-    overflow: hidden;
-}
-.archive div.imagebox img{
-    width: 100%;
-    border: 1px solid #ffbc7a;
-}
-.archive div.imagebox img.no-borders{
-    border: 0px none black;
-}
-.archive div.imagebox span{ /*--- TEXT UNDER ---*/
-    display: block;
-    font-size: 90%;
-    line-height: 1.2em;
-    color: black;
-    text-align: center;
-    font-weight: bold;
-}
-.archive div.imagebox.floatimage-after{
-    margin: 0;
-    margin-left: 5px;
-}
-
-.archive .manyelems .me-centeralign{
-    text-align: center;
-}
-.archive .manyelems table.infobox{
-    width: 100%;
-}
-.archive .manyelems .me-row{
-    display: flex;
-}
-.archive .manyelems .me-cell{
-    padding: 7px;
-    display: table-cell;
-}
-.archive .manyelems .me-head{
-    display: table-cell;
-    width: 100%;
-}
-.archive .me-cols-1{
-    width: 100%;
-}
-.archive .me-cols-2{
-    width: 50%;
-}
-.archive .me-cols-3{
-    width: 33.3%;
-}
-.archive .me-cols-4{
-    width: 25%;
-}
-
-.archive table.infobox {
-    margin-bottom: 10px;
-    margin-left: 10px;
-    padding: 5px 3px;
-    border: 1px solid #ffbc7a;
-    background-color: #fff5ea;
-    list-style-type: none;
-    text-align: left;
-    float: right;
-    clear: right;
-    border-collapse: separate;
-    width: 23em;
-}
-.archive table.infobox tr {
-    display: table-row;
-}
-.archive table.infobox tr * {
-    display: table-cell;
-    font-size: 90%;
-    padding: 1px;
-}
-.archive table.infobox tr a,
-.archive table.infobox tr b {
-    display: inline;
-    padding: 0px;
-}
-.archive table.infobox tr th {
-    vertical-align: top;
-}
-.archive table.infobox tr th.middle {
-    vertical-align: inherit;
-}
-.archive table.infobox tr th b{
-    color:#cc6600;
-}
-.archive table.infobox tr br {
-    border: 1px solid #ffbc7a;
-    margin: 5px 0;
-}
-.archive table.infobox tr.description { /*--- TEXT UNDER ---*/
-    text-align: center;
-    font-size: 90%;
-    color: black;
-    font-weight: bold;
-}
-.archive table.infobox tr.text {
-    text-align: center;
-}
-.archive table.infobox tr.image {
-    text-align: center;
-}
-.archive table.infobox tr.image td {
-    padding: 0px;
-}
-.archive table.infobox tr.image img {
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 3px;
-    border: 1px solid #ffbc7a;
-    padding: 0px;
-}
-.archive table.infobox tr.image img.no-borders{
-    border: 0px none black;
-}
-.archive table.infobox tr.maintitle th{
-    font-size: 120%;
-    background-color: #ffcb96;
-    padding: 2px 0px;
-    width: 100%;
-    text-align: center;
-}
-.archive table.infobox tr.title th{
-    background-color: #ffcb96;
-    padding: 1px;
-    width: 100%;
-    text-align: center;
-}
-.archive table.infobox tr.franchise th{
-    padding: 1px;
-    width: 100%;
-    text-align: center;
-}
-
-/*project*/
-.projects-row{
-    display: flex;
-    text-align: center;
-}
-.projects-cell{
-    padding: 7px;
-    display: table-cell;
-    text-align: center;
-}
-.projects-head{
-    display: table-cell;
-    text-align: center;
-    width: 100%;
-}
-
-.franchise-biker3, .archive table.infobox tr th.franchise-biker3{
-    color: white;
-    background: rgb(255, 75, 75);
-}
-.franchise-exnotes, .archive table.infobox tr th.franchise-exnotes{
-    color: white;
-    background: rgb(103, 58, 183);
-}
-.franchise-others, .archive table.infobox tr th.franchise-others{
-    color: white;
-    background: rgb(75, 75, 255);
-}
-.franchise-gr, .archive table.infobox tr th.franchise-others{
-    color: black;
-    background: #ffcb96;
-}
-.franchise-langs, .archive table.infobox tr th.franchise-langs{
-    color: black;
-    background: aqua;
-}
-
-h2.projects-head{
-    font-weight: bold;
-}
-.projects-cell h2{
-    color:#cc6600;
-    font-weight: bold;
-    line-height: 1em;
-}
-.projects-cell:hover{
-    background-color: #fff5ea;
-    animation: projc_colors 1s infinite;
-}
-@keyframes projc_colors{
-    0%{ background-color: transparent; }
-    50%{ color: white; background-color: #fff5ea; }
-    100%{ background-color: transparent }
-}
-
-.projects-cols-1{
-    width: 100%;
-}
-.projects-cols-2{
-    width: 50%;
-}
-.projects-cols-3{
-    width: 33.3%;
-}
-.projects-cols-4{
-    width: 25%;
-}
-
-img.projects-screens-1{
-    width: 100%;
-    margin: 0 auto;
-}
-img.projects-screens-1-big{
-    width: 75%;
-    margin: 0 auto;
-}
-img.projects-screens-2{
-    width: 49%;
-    margin: 0 auto;
-}
-img.projects-screens-3{
-    width: 33%;
-    margin: 0 auto;
-}
-
-/*references*/
-.ref-github{
-    color: #400080;
+main ul, main ol{
+    padding-left: 20px;
+}
+.container div.h2 {
+    padding-left: 5px;
+    margin-right: 5px;
+}
+.container div.h3 {
+    padding-left: 15px;
+    margin-right: 15px;
+}
+.container div.h4 {
+    padding-left: 25px;
+    margin-right: 25px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -555,64 +242,32 @@ img.projects-screens-3{
     .container{
         width: 100%;
     }
-    .archive table.infobox, .archive div.imagebox, .archive div.textbox{
+    main div.textbox{
         float: none;
         width: 100%;
         margin: 10px auto;
     }
 }
 @media screen and (max-width: 980px) {
-    .index .index-cell, .index, .index-row{
-        display: block;
-    }
-    .index .index-main, .index .index-updates{
+    .container{
         width: 100%;
     }
-    .index .index-updates{
-        padding-left: 0px;
-        margin-left: 0px;
-        border-left: 0px;
-        padding-top: 10px;
-        margin-top: 10px;
-        border-top: #ffbc7a solid 1px;
-    }
-    .index img{
-        width: 80%;
-    }
-    .archive div.images, .archive div.images div.imagebox{
-        display: block;
-        margin: 5px 0;
-    }
-    .archive table.infobox, .archive div.imagebox, .archive div.textbox{
+    main div.textbox{
         float: none;
         width: 100%;
         margin: 10px auto;
     }
-    .container{
+    header > nav > a > img{
         width: 100%;
     }
-    .projects-row, .archive .manyelems .me-row{
-        display: block;
-    }
-    .projects-cell, .archive .manyelems .me-cell{
-        display: block;
-        width: 100%;
-        padding: 7px 0px;
-    }
-    .projects-head{
-        display: block;
-    }
-    .headmenu-image{
-        width: 100%;
-    }
-    .headmenu-list li{
+    header > nav > ul > li{
         display: block;
         width: 100%;
     }
-    img.projects-screens-1, img.projects-screens-1-big, img.projects-screens-2, img.projects-screens-3{
-        width: 98%;
+    main table {
+        width: 100%;
     }
-    .slt-code ol, .lang-code ol {
+    .slt-code ol {
         list-style-type: none;
         padding-left: 0px;
     }

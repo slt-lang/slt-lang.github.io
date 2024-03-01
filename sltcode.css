@@ -1,0 +1,48 @@
+.slt-code * {
+    font-family: monospace;
+    font-size: 14px;
+}
+.slt-code .slt-operator {
+    color: black;
+}
+
+.slt-code .slt-comment {
+    color: #808080;
+}
+
+.slt-code .slt-digit {
+    color: #008000;
+}
+
+.slt-code .slt-keyword1 {
+    color: #0000FF;
+}
+
+.slt-code .slt-keyword2 {
+    color: #8f08c4;
+}
+
+.slt-code .slt-type {
+    color: #2d91af;
+}
+
+.slt-code .slt-call {
+    color: #74531f;
+}
+
+.slt-code .slt-string {
+    color: #a31515;
+}
+
+.slt-code ol {
+    list-style-type: decimal;
+    padding-left: 50px;
+    display: block;
+    background-color: #fffbf2;
+}
+
+.slt-code li {
+    display: list-item;
+    background-color: white;
+    padding-left: 10px;
+}

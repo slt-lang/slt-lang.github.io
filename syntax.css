@@ -1,17 +1,23 @@
-table.numliterals tr td {
+.numliterals tr td {
     text-align: center;
 }
-table.priorities tr td.ops a {
+.priorities tr td.ops a {
     font-family: monospace;
     background-color: #fff5ea;
 }
-table.priorities tr td.ops span.splitter {
+.priorities tr td.ops span.splitter {
     display: block;
     border-top: #ffbc7a dashed 1px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
-table.priorities tr td.ops span.union {
+.priorities tr td.ops span.union {
     font-family: monospace;
     font-size: 133%;
+}
+div.priorities {
+    display: flex;
+}
+div.priorities table {
+    margin: 3px;
 }
