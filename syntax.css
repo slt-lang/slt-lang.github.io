@@ -3,11 +3,11 @@
 }
 .priorities tr td.ops a {
     font-family: monospace;
-    background-color: #fff5ea;
+    background-color: var(--ext-color-2);
 }
 .priorities tr td.ops span.splitter {
     display: block;
-    border-top: #ffbc7a dashed 1px;
+    border-top: var(--ext-color-1) dashed 1px;
     margin-top: 5px;
     margin-bottom: 5px;
 }

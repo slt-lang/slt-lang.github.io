@@ -38,7 +38,7 @@
     list-style-type: decimal;
     padding-left: 50px;
     display: block;
-    background-color: #fffbf2;
+    background-color: var(--ext-color-3);
 }
 
 .slt-code li {

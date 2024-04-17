@@ -21,7 +21,7 @@
     <main>
         <div class="container">
             <h1>SLThree</h1>
-                <p><strong>SLThree</strong> (англ. <em>Script Language 3</em> &mdash; Скриптовый язык 3, "третий скриптовый") &mdash; язык программирования, базирующийся на платформе .NET Framework и тесно с ней интегрируемый.</p>
+                <p><strong>SLThree</strong> (англ. <em>Script Language 3</em> &mdash; Скриптовый язык 3, "третий скриптовый") &mdash; мультипарадигмальный интерпретируемый C-подобный язык программирования со строгой динамической типизацией, разработанный для платформы .NET. Смешивает императивный и функциональный подходы, а ООП реализуется единственным составным типом непосредственно языка &mdash; контекстом.</p>
                 <nav>
                     <span>FAQ:</span>
                     <h2><a href="#a-features">§ Особенности</a></h2>
@@ -33,9 +33,30 @@
                 <h2 id="a-features">Особенности</h2>
                 <div class="h2">
                     <ul>
-                        <li>[В разработке] JIT-компиляция в .NET Framework IL (который впоследствии подхватывает JIT платформы)</li>
+                        <li>[Экспериментально] компиляция в IL (который впоследствии подхватывает JIT платформы .NET)</li>
                         <li>Опциональная типизация, типы указывать можно, но не обязательно</li>
+                        <li>Возможность использовать все типы и их содержимое из платформы .NET</li>
                         <li>Будучи динамическим, язык использует не DLR, а собственное архитектурное решение</li>
+                    </ul>
+                </div>
+                <h2 id="a-features">Влиение других языков</h2>
+                <p>При разработке нового языка, любой компиляторщик смотрит на возможности уже существующих, заимствование которых называет красивым словом "влияение языка". Список этих влияний:
+                </p>
+                <div class="h2">
+                    <ul>
+                        <li><strong>C</strong>: ключевые слова, синтаксис, набор операций, принцип "любое выражение &mdash; утверждение"</li>
+                        <li><strong>C#</strong>: интерполированные строки, кортежи, обобщенные методы (&lt;T&gt;), операции ?? и .?, цикл <strong>foreach</strong></li>
+                        <li><strong>F#</strong>: операция pipe (|&gt;)</li>
+                        <li><strong>Rust</strong>: наименования базовых типов</li>
+                    </ul>
+                </div>
+                <p>Несмотря на это, в языке присутствуют и собственные уникальные возможности
+                </p>
+                <div class="h2">
+                    <ul>
+                        <li>Случайный выбор (* и ^)</li>
+                        <li>Взаимодействие с платформой (@ и ::)</li>
+                        <li>Контексты (хотя Lua-таблицы и JS-объекты имеют схожий функционал, я склонен отнести их к уникальному, <a>здесь</a> вы можете узнать почему)</li>
                     </ul>
                 </div>
 
@@ -93,21 +114,17 @@
                             </tr>
                             <tr>
                                 <td><strong>SLThree 0.7.0</strong></td>
-                                <td>1034 ms</td>
+                                <td>240 ms</td>
                             </tr>
                             <tr>
                                 <td colspan="2" align="center"><strong>Статическая типизация</strong></td>
-                            </tr>
-                            <tr>
-                                <td>C# 7.3</td>
-                                <td>1034 ms</td>
                             </tr>
                             <tr>
                                 <td>PascalABC.NET 3.9</td>
                                 <td>226 ms</td>
                             </tr>
                             <tr>
-                                <td>C# 11</td>
+                                <td>C#</td>
                                 <td>212 ms</td>
                             </tr>
                             <tr>
@@ -158,9 +175,9 @@
                             <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">return</span> step;</li>
                             <li class="slt-line">};</li>
                             <li class="slt-line"><span class="slt-keyword1">using </span><span class="slt-type">jit</span>;</li>
-                            <li class="slt-line"><span class="slt-keyword1">using </span><span class="slt-type">tlinq</span>;</li>
+                            <li class="slt-line"><span class="slt-keyword1">using </span><span class="slt-type">dlinq</span>;</li>
                             <li class="slt-line">calc_opt = jit.<span class="slt-call">opt</span>(calc, <span class="slt-keyword1">self</span>);</li>
-                            <li class="slt-line">&lt;<span class="slt-type">i64</span>&gt;<span class="slt-digit">0</span>..<span class="slt-digit">1_000_000</span> |> tlinq.<span class="slt-call">max</span>&lt;<span class="slt-type">i64</span>&gt;(calc_opt.<span class="slt-call">CreateDelegate</span>(@<span class="slt-type">System.Func</span>&lt;<span class="slt-type">i64</span>, <span class="slt-type">i64</span>&gt;));</li>
+                            <li class="slt-line">&lt;<span class="slt-type">i64</span>&gt;<span class="slt-digit">0</span>..<span class="slt-digit">1_000_000</span> |> dlinq.<span class="slt-call">max</span>&lt;<span class="slt-type">i64</span>, <span class="slt-type">i64</span>&gt;(calc_opt.<span class="slt-call">CreateDelegate</span>(@<span class="slt-type">System.Func</span>&lt;<span class="slt-type">i64</span>, <span class="slt-type">i64</span>&gt;));</li>
                             </ol>
                             </div>
                             
@@ -194,7 +211,7 @@
                             </tr>
                             <tr>
                                 <td><strong>SLThree 0.7.0</strong> Typing Update</td>
-                                <td>1034 ms</td>
+                                <td>240 ms</td>
                             </tr>
                         </tbody>
                     </table>
