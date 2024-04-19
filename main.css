@@ -238,6 +238,13 @@ main ul, main ol{
     padding-left: 25px;
     margin-right: 25px;
 }
+code {
+    background-color: var(--ext-color-2);
+    border-radius: 3px;
+    font-family: monospace;
+    padding: 0px 3px;
+    font-size: 14px;
+}
 
 @media screen and (min-width: 1200px) {
     .container{

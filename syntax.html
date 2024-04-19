@@ -7,6 +7,7 @@
     <link rel="icon" href="slthree.ico"/>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='syntax.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='sltcode.css'>
 </head>
 <body>
     <header>
@@ -25,6 +26,9 @@
                     <span>Навигация:</span>
                     <h1><a href="#a-expressions">§ Выражения</a></h1>
                         <h2><a href="#ae-literals">§ Литералы</a></h2>
+                            <h3><a href="#ae-numericliterals">§ Числовые</a></h3>
+                            <h3><a href="#ae-charliterals">§ Символьные</a></h3>
+                            <h3><a href="#ae-stringliterals">§ Строковые</a></h3>
                         <h2><a href="#ae-assign">§ Присваивание</a></h2>
                             <h3><a href="#ae-extassign">§ Расширенное присваивание</a></h3>
                             <h3><a href="#ae-lvalues">§ lvalue-выражения</a></h3>
@@ -34,7 +38,9 @@
                             <h3><a href="#ae-contextarg">§ Передача контекста</a></h3>
                             <h3><a href="#ae-methoddefinition">§ Определение метода</a></h3>
                             <h3><a href="#ae-methodmodificators">§ Модификаторы</a></h3>
+                            <h3><a href="#ae-pipeoperator">§ Операция |&gt;</a></h3>
                             <h3><a href="#ae-methodtyping">§ Типизация</a></h3>
+                            <h3><a href="#ae-methodgenerics">§ Обобщения</a></h3>
                         <h2><a href="#ae-logical">§ Логические операции</a></h2>
                             <h3><a href="#ae-comparison">§ Операции сравнения</a></h3>
                             <h3><a href="#ae-andorxor">§ И, ИЛИ, ИСКЛ ИЛИ</a></h3>
@@ -66,6 +72,7 @@
                             <h3><a href="#ae-creator-range">§ Создание диапазона</a></h3>
                             <h3><a href="#ae-creator-context">§ Создание контекста</a></h3>
                             <h3><a href="#ae-creator-using">§ Создание using</a></h3>
+                            <h3><a href="#ae-interpolatedstrings">§ Интерполированные строки</a></h3>
                         <h2><a href="#ae-choosers">§ Операции случайного выбора</a></h2>
                         <h2><a href="#ae-reflection">§ Операции рефлексии</a></h2>
                             <h3><a href="#ae-typeof">§ Получение типа</a></h3>
@@ -98,6 +105,10 @@
                                         <br><span class="splitter"></span>
                                         <span class="union">
                                             <a href="#ae-methoddefinition">... => ...</a>
+                                        </span>
+                                        <br><span class="splitter"></span>
+                                        <span class="union">
+                                            <a href="#ae-pipeoperator">x |> y()</a>
                                         </span>
                                     </td>
                                 </tr>
@@ -309,7 +320,7 @@
                     <div class="h3">
                         <ul>
                             <li>Все числа поддерживают _ в описании</li>
-                            <li>Можно писать целые числа в двоичном, восмьеричном и шестнадцатричном виде с помощью префиксов: 0b101, 0o123456, 0xFF</li>
+                            <li>Можно писать целые числа в двоичном, восьмеричном и шестнадцатеричном виде с помощью префиксов: 0b101, 0o123456, 0xFF</li>
                         </ul>
                         <table class="numliterals">
                             <tbody>
@@ -374,18 +385,236 @@
                             </tbody>
                         </table>
                     </div>
-
+                    <h3 id="ae-charliterals">Символьные</h3>
+                    <div class="h3">
+                        <p>Символы состоят из одного символа и записываются в одинарных кавычках. Поддерживаются все escape-последовательности из строк, а в дополнение к ним <code>\'</code>.</p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line"><span class="slt-string">'a'</span> == <span class="slt-string">'а'</span>;</li>
+                            </ol>
+                            </div>
+                        </div>
+                    </div>
                     <h3 id="ae-stringliterals">Строковые</h3>
+                    <div class="h3">
+                        <p>Строки записываются в двойных кавычках. Список поддерживаемых escape-последовательностей: <code>\"</code>, <code>\\</code>, <code>\t</code>, <code>\r</code>, <code>\n</code></p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line">str = <span class="slt-string">"\\\t\r\n"</span>;</li>
+                            </ol>
+                            </div>
+                            
+                        </div>
+                    </div>
                 <h2 id="ae-assign">Присваивание</h2>
+                <div class="h2">
+                    <p>Присваивание осуществляется с помощью одинарного равенства <code>=</code>, присвоить что-либо можно только <a href="#ae-lvalues">lvalue-выражению</a>.</p>
+                </div>
+                    <h3 id="ae-names">Имя</h3>
+                    <div class="h3">
+                        <p>Имена &mdash; любые последовательности буквенных символов, цифр и знаков <code>_</code>, не начинающиеся с цифры. Регистр написания имени имеет значение также, как и в любых других C-подобных языках. Примеры имён: <code>имя</code>, <code>x1_x2</code>.</p>
+                    </div>
                     <h3 id="ae-extassign">Расширенное присваивание</h3>
+                    <div class="h3">
+                        <p>В языке существуют следующие операции расширенного присваивания: <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>&=</code>, <code>|=</code>, <code>^=</code></p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line">i = -<span class="slt-digit">1</span>;</li>
+                            <li class="slt-line"><span class="slt-keyword2">while</span> ((i += <span class="slt-digit">1</span>) < <span class="slt-digit">10</span>)</li>
+                            <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-call">здесь_какой_то_код</span>();</li>
+                            </ol>
+                            </div>
+                            
+                            <span class="description">Создание цикла со счётчиком с помощью цикла while и расширенного присваивания</span>
+                        </div>
+                    </div>
                     <h3 id="ae-lvalues">lvalue-выражения</h3>
+                    <div class="h3">
+                        <p>lvalue-выражением могут быть:</p>
+                        <ul>
+                            <li><a href="#ae-names">Имена</a></li>
+                            <li><a href="#ae-creator-tuple">Кортежи</a></li>
+                            <li><a href="#ae-indexator">Индексаторы</a></li>
+                            <li><a href="#ae-memberaccess">Операция доступа</a></li>
+                        </ul>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line">simple_name = <span class="slt-digit">25</span>;</li>
+                            <li class="slt-line">(x, y) = (<span class="slt-digit">5</span>, <span class="slt-digit">5</span>);</li>
+                            <li class="slt-line">(lst = [<span class="slt-digit">1</span>, <span class="slt-digit">2</span>, <span class="slt-digit">3</span>])[<span class="slt-digit">1</span>] = x * y;</li>
+                            <li class="slt-line"><span class="slt-keyword1">self</span>.result = simple_name == lst[<span class="slt-digit">1</span>];</li>
+                            </ol>
+                            </div>
+                            
+                        </div>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line">(<span class="slt-keyword1">self</span>.x, <span class="slt-keyword1">self</span>[<span class="slt-string">"yz"</span>]) = (<span class="slt-digit">1</span>, (y, z) = (<span class="slt-digit">2</span>, <span class="slt-digit">3</span>));</li>
+                            </ol>
+                            </div>
+                            
+                            <span class="description">Вложенность присваиваний</span>
+                        </div>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line">a = b = c = d = <span class="slt-digit">10</span>;</li>
+                            </ol>
+                            </div>
+                            
+                            <span class="description">Множественное присваивание</span>
+                        </div>
+                    </div>
                     <h3 id="ae-assigntyping">Определение типа переменной</h3>
+                    <div class="h3">
+                        <p>Начиная с обновления <strong>0.7.0 Typing Update</strong>, в SLThree появилась возможность аннотировать тип переменной. Указание типа никак не влияет на значение, которые вы записываете в переменную, однако позволяет вам не запутаться. Кроме того, для оптимизации кода с помощью <code>jit.opt()</code> вам необходимо указать типы всех переменных и параметров.</p>
+                        <p>Все случаи возможного описания типа переменной, кроме <a href="#ae-methodtyping">типов аргументов методов</a>:</p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line"><span class="slt-type">i64</span> simple_name = <span class="slt-digit">25</span>;</li>
+                            <li class="slt-line">(<span class="slt-type">i64</span> x, <span class="slt-type">i64</span> y) = (<span class="slt-digit">5</span>, <span class="slt-digit">5</span>);</li>
+                            <li class="slt-line"><span class="slt-keyword2">foreach</span> (<span class="slt-type">i64</span> x<span class="slt-keyword2"> in </span>[<span class="slt-digit">1</span>, <span class="slt-digit">2</span>, <span class="slt-digit">3</span>])</li>
+                            <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;x;</li>
+                            </ol>
+                            </div>
+                            
+                        </div>
+                    </div>
                 <h2 id="ae-methods">Методы</h2>
                     <h3 id="ae-call">Вызов метода</h3>
+                    <div class="h3">
+                        <p>Количество аргументов при вызове должно совпадать с количеством аргументов определения метода. Исключение составляют перегруженные методы платформы .NET. В их случае будет вызван первый попавшийся метод с нужным количеством аргументов.</p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line"><span class="slt-call">method_name</span>(arg1, arg2, arg3);</li>
+                            </ol>
+                            </div>
+                            
+                        </div>
+                        <p>Если вам нужно сделать какое-то действие ровно один раз, не засоряя контекст лишними именами, можно сразу же вызвать лямбду:</p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line">i = <span class="slt-digit">1</span>;</li>
+                            <li class="slt-line">((cnt) => cnt.i += <span class="slt-digit">1</span>)(<span class="slt-keyword1">self</span>);</li>
+                            </ol>
+                            </div>
+                            
+                        </div>
+                    </div>
                     <h3 id="ae-contextarg">Передача контекста</h3>
+                    <div class="h3">
+                        <p>Некоторые методы (например, eval) требуют для своего выполнения контекст. В SLThree существует несколько необходимых для этого <a href="#ae-specialnames">ключевых слов</a>, а также вы можете создавать свои контексты. Правильный вызов eval в текущем контексте выглядит так:</p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line"><span class="slt-keyword1">using </span><span class="slt-type">slt</span>;</li>
+                            <li class="slt-line">slt.<span class="slt-call">eval</span>(<span class="slt-keyword1">self</span>, <span class="slt-string">"2 + 2"</span>);</li>
+                            </ol>
+                            </div>
+                            
+                        </div>
+                    </div>
                     <h3 id="ae-methoddefinition">Определение метода</h3>
+                    <div class="h3">
+                        <p>Все методы в SLThree по умолчанию являются безымянными. Следовательно, простейшее описание метода выглядит так:</p>
+                        <div class="textbox">
+                            <div class="slt-code"><ol>
+                                <li class="slt-line">() => {</li>
+                                <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">return</span>;</li>
+                                <li class="slt-line">};</li>
+                                </ol>
+                                </div>
+                        </div>
+                        <p>Аргументы описываются в скобках (если у метода нет модификаторов, аргумент всего один и для него не аннотирован тип, скобки можно опустить):</p>
+                        <div class="textbox">
+                            <div class="slt-code"><ol>
+                                <li class="slt-line">(arg1, arg2) => arg1 + arg2;</li>
+                                </ol>
+                                </div>
+                                
+                        </div>
+                        <p>Для привязки метода к имени, его нужно присвоить этому имени:</p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line">method_name = (arg1, arg2, arg3) => arg1 + arg2 + arg3;</li>
+                            </ol>
+                            </div>
+                        </div>
+                    </div>
                     <h3 id="ae-methodmodificators">Модификаторы</h3>
+                    <div class="h3">
+                        <p>Список возможных модификаторов:</p>
+                        <ul>
+                            <li><strong>explicit</strong> &mdash; отключение автоматического приведения числовых типов к максимальному в операциях. Операции не поддерживают никакие типы, кроме i64, u64 и f64. Однако, если вы используете именно их, этот модификатор может ускорить выполнение операций в два раза.</li>
+                            <li><strong>recursive</strong> &mdash; контекст аргументов будет генерироваться при каждом вызове метода. По умолчанию, контекст метода кэшируется.</li>
+                        </ul>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line">fib = <span class="slt-keyword1">recursive</span> (n) => (n < <span class="slt-digit">2</span>) ? n : <span class="slt-keyword1">this</span>.<span class="slt-call">fib</span>(n - <span class="slt-digit">2</span>) + <span class="slt-keyword1">this</span>.<span class="slt-call">fib</span>(n - <span class="slt-digit">1</span>);</li>
+                            </ol>
+                            </div>
+                            <span class="description">Рекурсивный алгоритм нахождения числа Фибоначчи</span>
+                        </div>
+                    </div>
+                    <h3 id="ae-pipeoperator">Операция |&gt;</h3>
+                    <div class="h3">
+                        <p>Эта операция позволяет писать последовательности из вызовов функций в более коротком и красивом виде. Левый аргумент этой операции становится первым параметром вызова метода справа.</p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Было</th>
+                                    <th>Стало</th>
+                                </tr>
+                                <tr>
+                                    <td>x |> y()</td>
+                                    <td>y(x)</td>
+                                </tr>
+                                <tr>
+                                    <td>x(y) |> y(x)</td>
+                                    <td>y(x(y), x)</td>
+                                </tr>
+                                <tr>
+                                    <td>x |> y(z())</td>
+                                    <td>y(x, z())</td>
+                                </tr>
+                                <tr>
+                                    <td>x |> y() |> z()</td>
+                                    <td>z(y(x))</td>
+                                </tr>
+                                <tr>
+                                    <td>x |> (y() |> z())</td>
+                                    <td>z(x, y())</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                    </div>
                     <h3 id="ae-methodtyping">Типизация</h3>
+                    <div class="h3">
+                        <p>Тип параметра метода пишется перед его именем. Тип возвращаемого значения пишется после двоеточия после списка параметров</p>
+
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line"><span class="slt-type">SLThree.Method</span> sum = (<span class="slt-type">i64</span> x, <span class="slt-type">i64</span> y): <span class="slt-type">i64</span> => x + y;</li>
+                            </ol>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <h3 id="ae-methodgenerics">Обобщения</h3>
+                    <div class="h3">
+                        <p>Начиная с <strong>0.7.0 Typing Update</strong> в SLThree появились обобщённые методы. Их поддержка, главным образом, позволяет вызывать обобщённые методы из .NET.</p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line"><span class="slt-keyword1">using </span><span class="slt-type">tlinq</span>;</li>
+                            <li class="slt-line">*&lt;<span class="slt-type">i64</span>&gt;<span class="slt-digit">1</span>..<span class="slt-digit">100</span> |> tlinq.<span class="slt-call">take</span>&lt;<span class="slt-type">i64</span>&gt;(<span class="slt-digit">100</span>) |> tlinq.<span class="slt-call">select</span>&lt;<span class="slt-type">i64</span>, <span class="slt-type">f64</span>&gt;(x => x / <span class="slt-digit">100.0</span>) |> tlinq.<span class="slt-call">average</span>&lt;<span class="slt-type">f64</span>&gt;();</li>
+                            </ol>
+                            </div>
+                        </div>
+                        <p>Кроме того, появилась возможность создавать обобщённые методы SLThree. В этом случае обобщённые параметры пишутся между модификаторами и списком аргументов.</p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line">my_generic_for = &lt;<span class="slt-type">T</span>&gt;(<span class="slt-type">T</span> a): <span class="slt-type">bool</span> => a is <span class="slt-type">T</span>;</li>
+                            <li class="slt-line"><span class="slt-call">my_generic_for</span>&lt;<span class="slt-type">i32</span>&gt;(<span class="slt-digit">2</span>);</li>
+                            </ol>
+                            </div>
+                        </div>
+                        <p>Подстановки типов влияют на все его использования в методе, за исключением тех, что относятся к вложенным методам.</p>
+                        <div class="textbox">
+                            <div class="slt-code"><ol>
+                                <li class="slt-line">x = &lt;<span class="slt-type">T</span>&gt;() =>  {</li>
+                                <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;y = () => @<span class="slt-type">T</span>;</li>
+                                <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">return</span> <span class="slt-call">y</span>();</li>
+                                <li class="slt-line">};</li>
+                                <li class="slt-line"><span class="slt-call">x</span>(); <span class="slt-comment">// RuntimeError: Type "T" not found at 2:17</span></li>
+                                </ol>
+                                </div>
+                                
+                        </div>
+                    </div>
                 <h2 id="ae-logical">Логические операции</h2>
                     <h3 id="ae-comparison">Операции сравнения</h3>
                     <h3 id="ae-andorxor">И, ИЛИ, ИСЛК ИЛИ</h3>
@@ -417,6 +646,7 @@
                     <h3 id="ae-creator-range">Создание диапазона</h3>
                     <h3 id="ae-creator-context">Создание контекста</h3>
                     <h3 id="ae-creator-using">Создание using</h3>
+                    <h3 id="ae-interpolatedstrings">Интерполированные строки</h3>
                 <h2 id="ae-choosers">Операции случайного выбора</h2>
                 <h2 id="ae-reflection">Операции рефлексии</h2>
                     <h3 id="ae-typeof">Получение типа</h3>
