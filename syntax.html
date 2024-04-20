@@ -15,7 +15,8 @@
             <a href="index.html"><img src="headlogo.png" alt="logo"/></a>
             <ul>
                 <li><a href="index.html">Главная</a></li>
-                <li><a href="syntax.html">Справка</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="syntax.html">Синтаксис</a></li>
             </ul>
         </nav>
     </header>
@@ -43,16 +44,12 @@
                             <h3><a href="#ae-methodgenerics">§ Обобщения</a></h3>
                         <h2><a href="#ae-logical">§ Логические операции</a></h2>
                             <h3><a href="#ae-comparison">§ Операции сравнения</a></h3>
-                            <h3><a href="#ae-andorxor">§ И, ИЛИ, ИСКЛ ИЛИ</a></h3>
+                            <h3><a href="#ae-andorxor">§ И, ИЛИ</a></h3>
                             <h3><a href="#ae-is">§ Соответствие типу</a></h3>
                             <h3><a href="#ae-ternary">§ Тернарная операция</a></h3>
                             <h3><a href="#ae-nullcoalescing">§ Проверка на null</a></h3>
                             <h3><a href="#ae-safeexpr">§ Безопасная операция</a></h3>
                         <h2><a href="#ae-arithmetic">§ Арифметические операции</a></h2>
-                            <h3><a href="#ae-addition">§ Сложение и вычитание</a></h3>
-                            <h3><a href="#ae-multiplying">§ Умножение, деление, остаток</a></h3>
-                            <h3><a href="#ae-bitops">§ Побитовые операции</a></h3>
-                            <h3><a href="#ae-brackets">§ Скобки</a></h3>
                         <h2><a href="#ae-memberaccess">§ Доступ к члену</a></h2>
                             <h3><a href="#ae-nullconditional">§ Условие null</a></h3>
                         <h2><a href="#ae-indexator">§ Индексаторы</a></h2>
@@ -72,12 +69,22 @@
                             <h3><a href="#ae-creator-range">§ Создание диапазона</a></h3>
                             <h3><a href="#ae-creator-context">§ Создание контекста</a></h3>
                             <h3><a href="#ae-creator-using">§ Создание using</a></h3>
-                            <h3><a href="#ae-interpolatedstrings">§ Интерполированные строки</a></h3>
+                        <h2><a href="#ae-interpolatedstrings">§ Интерполированные строки</a></h2>
                         <h2><a href="#ae-choosers">§ Операции случайного выбора</a></h2>
                         <h2><a href="#ae-reflection">§ Операции рефлексии</a></h2>
                             <h3><a href="#ae-typeof">§ Получение типа</a></h3>
                             <h3><a href="#ae-getoverload">§ Получение конкретной перегрузки</a></h3>
                     <h1><a href="#a-statements">§ Утверждения</a></h1>
+                        <h2><a href="#as-expr">§ Утверждение-выражение</a></h2>
+                        <h2><a href="#as-condition">§ Условный оператор</a></h2>
+                        <h2><a href="#as-loops">§ Циклы</a></h2>
+                            <h3><a href="#as-while">§ Цикл while</a></h3>
+                            <h3><a href="#as-foreach">§ Цикл foreach</a></h3>
+                            <h3><a href="#as-breakcontinue">§ Прерывание</a></h3>
+                        <h2><a href="#as-return">§ Оператор return</a></h2>
+                        <h2><a href="#as-using">§ Оператор using</a></h2>
+                        <h2><a href="#as-context">§ Оператор context</a></h2>
+                        <h2><a href="#as-try">§ Обработка исключений</a></h2>
                 </nav>
             <h1 id="a-expressions">Выражения</h1>
                 <h2 id="ae-priorities">Приоритеты</h2>
@@ -152,9 +159,9 @@
                                     <td>binary 5</td>
                                     <td class="ops">
                                         <span class="union">
-                                            <a href="#ae-bitops">|</a>
-                                            <a href="#ae-bitops">&</a>
-                                            <a href="#ae-bitops">^</a>
+                                            <a href="#ae-arithmetic">|</a>
+                                            <a href="#ae-arithmetic">&</a>
+                                            <a href="#ae-arithmetic">^</a>
                                         </span>
                                     </td>
                                 </tr>
@@ -186,8 +193,8 @@
                                     <td>binary 2</td>
                                     <td class="ops">
                                         <span class="union">
-                                            <a href="#ae-addition">+</a>
-                                            <a href="#ae-addition">-</a>
+                                            <a href="#ae-arithmetic">+</a>
+                                            <a href="#ae-arithmetic">-</a>
                                         </span>
                                     </td>
                                 </tr>
@@ -195,9 +202,9 @@
                                     <td>binary 1</td>
                                     <td class="ops">
                                         <span class="union">
-                                            <a href="#ae-multiplying">*</a>
-                                            <a href="#ae-multiplying">/</a>
-                                            <a href="#ae-multiplying">%</a>
+                                            <a href="#ae-arithmetic">*</a>
+                                            <a href="#ae-arithmetic">/</a>
+                                            <a href="#ae-arithmetic">%</a>
                                         </span>
                                     </td>
                                 </tr>
@@ -225,8 +232,8 @@
                                     <td>unary</td>
                                     <td class="ops">
                                         <span class="union">
-                                            <a href="#ae-addition">+</a>
-                                            <a href="#ae-addition">-</a>
+                                            <a href="#ae-arithmetic">+</a>
+                                            <a href="#ae-arithmetic">-</a>
                                         </span>
                                         <br><span class="splitter"></span>
                                         <span class="union">
@@ -316,6 +323,7 @@
                 </div>
                 
                 <h2 id="ae-literals">Литералы</h2>
+                <div class="h2">
                     <h3 id="ae-numericliterals">Числовые</h3>
                     <div class="h3">
                         <ul>
@@ -387,7 +395,7 @@
                     </div>
                     <h3 id="ae-charliterals">Символьные</h3>
                     <div class="h3">
-                        <p>Символы состоят из одного символа и записываются в одинарных кавычках. Поддерживаются все escape-последовательности из строк, а в дополнение к ним <code>\'</code>.</p>
+                        <p>Символы состоят из одного знака и записываются в одинарных кавычках. Поддерживаются все escape-последовательности из строк, а в дополнение к ним <code>\'</code>.</p>
                         <div class="textbox"><div class="slt-code"><ol>
                             <li class="slt-line"><span class="slt-string">'a'</span> == <span class="slt-string">'а'</span>;</li>
                             </ol>
@@ -404,10 +412,10 @@
                             
                         </div>
                     </div>
+                </div>
                 <h2 id="ae-assign">Присваивание</h2>
                 <div class="h2">
                     <p>Присваивание осуществляется с помощью одинарного равенства <code>=</code>, присвоить что-либо можно только <a href="#ae-lvalues">lvalue-выражению</a>.</p>
-                </div>
                     <h3 id="ae-names">Имя</h3>
                     <div class="h3">
                         <p>Имена &mdash; любые последовательности буквенных символов, цифр и знаков <code>_</code>, не начинающиеся с цифры. Регистр написания имени имеет значение также, как и в любых других C-подобных языках. Примеры имён: <code>имя</code>, <code>x1_x2</code>.</p>
@@ -472,7 +480,9 @@
                             
                         </div>
                     </div>
+                </div>
                 <h2 id="ae-methods">Методы</h2>
+                <div class="h2">
                     <h3 id="ae-call">Вызов метода</h3>
                     <div class="h3">
                         <p>Количество аргументов при вызове должно совпадать с количеством аргументов определения метода. Исключение составляют перегруженные методы платформы .NET. В их случае будет вызван первый попавшийся метод с нужным количеством аргументов.</p>
@@ -513,7 +523,7 @@
                                 </ol>
                                 </div>
                         </div>
-                        <p>Аргументы описываются в скобках (если у метода нет модификаторов, аргумент всего один и для него не аннотирован тип, скобки можно опустить):</p>
+                        <p>Параметры описываются в скобках (если у метода параметр всего один и для него не аннотирован тип, скобки можно опустить):</p>
                         <div class="textbox">
                             <div class="slt-code"><ol>
                                 <li class="slt-line">(arg1, arg2) => arg1 + arg2;</li>
@@ -532,7 +542,7 @@
                     <div class="h3">
                         <p>Список возможных модификаторов:</p>
                         <ul>
-                            <li><strong>explicit</strong> &mdash; отключение автоматического приведения числовых типов к максимальному в операциях. Операции не поддерживают никакие типы, кроме i64, u64 и f64. Однако, если вы используете именно их, этот модификатор может ускорить выполнение операций в два раза.</li>
+                            <li><strong>explicit</strong> &mdash; отключение автоматического приведения числовых типов к максимальному в операциях. Арифметические операции не поддерживают никакие типы, кроме i64, u64 и f64. Однако, если вы используете именно их, этот модификатор может ускорить выполнение операций в два раза.</li>
                             <li><strong>recursive</strong> &mdash; контекст аргументов будет генерироваться при каждом вызове метода. По умолчанию, контекст метода кэшируется.</li>
                         </ul>
                         <div class="textbox"><div class="slt-code"><ol>
@@ -544,7 +554,7 @@
                     </div>
                     <h3 id="ae-pipeoperator">Операция |&gt;</h3>
                     <div class="h3">
-                        <p>Эта операция позволяет писать последовательности из вызовов функций в более коротком и красивом виде. Левый аргумент этой операции становится первым параметром вызова метода справа.</p>
+                        <p>Эта операция позволяет писать последовательности из вызовов функций в более коротком и красивом виде. Левый параметр этой операции становится первым параметром вызова метода справа.</p>
                         <table>
                             <tbody>
                                 <tr>
@@ -614,21 +624,181 @@
                                 </div>
                                 
                         </div>
+                        <p>С помощью класса <code>slt</code>, вы также можете получить конкретный случай обобщённого метода:</p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line"><span class="slt-keyword1">using </span><span class="slt-type">slt</span>;</li>
+                            <li class="slt-line">m = &lt;<span class="slt-type">T</span>&gt;() =&gt; @<span class="slt-type">T</span>;</li>
+                            <li class="slt-line">m_for_i64 = m |> slt.<span class="slt-call">make_generic</span>([@<span class="slt-type">i64</span>]);</li>
+                            </ol>
+                            </div>
+                            
+                            
+                        </div>
                     </div>
+                </div>
                 <h2 id="ae-logical">Логические операции</h2>
+                <div class="h2">
                     <h3 id="ae-comparison">Операции сравнения</h3>
-                    <h3 id="ae-andorxor">И, ИЛИ, ИСЛК ИЛИ</h3>
+                    <div class="h3">
+                        <p>При сравнениях на равенство <code>==</code> и неравенство <code>!=</code> для первого объекта неявно вызывается Equals.</p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line"><span class="slt-digit">2</span> == <span class="slt-digit">2</span>;</li>
+                            <li class="slt-line"><span class="slt-digit">2</span>.<span class="slt-call">Equals</span>(<span class="slt-digit">2</span>);</li>
+                            </ol>
+                            </div>
+                        </div>
+                        <p>Другие сравнения (<code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>) будут работать только если объект реализует интерфейс IComparable&lt;T&gt;</p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line"><span class="slt-keyword1">using </span><span class="slt-type">System.DateTime</span>;</li>
+                            <li class="slt-line">DateTime.Now > DateTime.MinValue;</li>
+                            </ol>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <h3 id="ae-andorxor">И, ИЛИ</h3>
+                    <div class="h3"><p>Всем известные логические операции операции. Про них нужно помнить, что исключающее ИЛИ <code>^</code> имеет приоритет бОльший, чем логическое И <code>&&</code>, так как она является побитовой операцией.</p>
+                        <p>Операции <code>&&</code> и <code>||</code> являются ленивыми: правая часть операции будет выполнена только при необходимости:</p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line">a = <span class="slt-digit">0</span>; (a += <span class="slt-digit">1</span>) == <span class="slt-digit">0</span> && (a += <span class="slt-digit">1</span>) != <span class="slt-digit">0</span>; a; <span class="slt-comment">// 1</span></li>
+                            <li class="slt-line">a = <span class="slt-digit">0</span>; (a += <span class="slt-digit">1</span>) == <span class="slt-digit">0</span> &&nbsp; (a += <span class="slt-digit">1</span>) != <span class="slt-digit">0</span>; a; <span class="slt-comment">// 2</span></li>
+                            <li class="slt-line">a = <span class="slt-digit">0</span>; (a += <span class="slt-digit">1</span>) != <span class="slt-digit">0</span> || (a += <span class="slt-digit">1</span>) == <span class="slt-digit">0</span>; a; <span class="slt-comment">// 1</span></li>
+                            <li class="slt-line">a = <span class="slt-digit">0</span>; (a += <span class="slt-digit">1</span>) != <span class="slt-digit">0</span> |&nbsp; (a += <span class="slt-digit">1</span>) == <span class="slt-digit">0</span>; a; <span class="slt-comment">// 2</span></li>
+                            </ol>
+                            </div>
+                            
+                        </div>
+                    </div>
                     <h3 id="ae-is">Соответствие типу</h3>
+                    <div class="h3">
+                        <p>Операция <code>is</code> используется для проверки типа выражения слева.</p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line">(<span class="slt-digit">5</span> / <span class="slt-digit">2</span>) is <span class="slt-type">i64</span>; <span class="slt-comment">// True</span></li>
+                            </ol>
+                            </div>
+                            
+                        </div>
+                    </div>
                     <h3 id="ae-ternary">Тернарная операция</h3>
+                    <div class="h3">
+                        <p>Используется для ветвления на уровне выражений. Условие операции должно возвращать bool.</p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line"><span class="slt-keyword1">true</span> ? <span class="slt-string">"true"</span> : <span class="slt-string">"false"</span>;</li>
+                            </ol>
+                            </div>
+                        </div>
+                    </div>
                     <h3 id="ae-nullcoalescing">Проверка на null</h3>
+                    <div class="h3">
+                        <p>Если вы предполагаете, что выражение может вернуть null, можете проверить это с помощью операции <code>??</code>:</p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line">repeat = () =&gt;  {</li>
+                            <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">if</span> (need_init ?? <span class="slt-keyword1">true</span>) {</li>
+                            <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;need_init = <span class="slt-keyword1">false</span>;</li>
+                            <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a = b = ^<span class="slt-digit">1</span>..<span class="slt-digit">10</span>;</li>
+                            <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+                            <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">return</span> a + b;</li>
+                            <li class="slt-line">};</li>
+                            </ol>
+                            </div>
+                            
+                        </div>
+                    </div>
                     <h3 id="ae-safeexpr">Безопасная операция</h3>
+                    <div class="h3">
+                        <p>Похож на проверку на null, но делает левое выражение безопасным и если при его выполнении произошла ошибка, возвращает правую часть.</p>
+                        <div class="textbox">
+                            <div class="slt-code"><ol>
+                                <li class="slt-line"><span class="slt-digit">1</span> / <span class="slt-digit">0</span> -? <span class="slt-string">"деление на ноль"</span>;</li>
+                                </ol>
+                                </div>
+                        </div>
+                    </div>
+                </div>
                 <h2 id="ae-arithmetic">Арифметические операции</h2>
-                    <h3 id="ae-addition">Сложение и вычитание</h3>
-                    <h3 id="ae-multiplying">Умножение, деление, остаток</h3>
-                    <h3 id="ae-bitops">Побитовые операции</h3>
-                    <h3 id="ae-brackets">Скобки</h3>
+                <div class="h2">
+                    <p>
+                        Все арифметические операции поддерживают только три типа данных. В <strong>explicit</strong> режиме нельзя использовать остальные типы без <a href="ae-typecast">преобразований</a>. В <strong>implicit</strong> режиме можно использовать типы меньшей битности того же знака, однако результат всё равно будет 64-битный.
+                    </p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Левая часть</th>
+                                <th>Правая часть</th>
+                                <th>Результат</th>
+                            </tr>
+                            <tr>
+                                <td>i64</td>
+                                <td>i64</td>
+                                <td>i64</td>
+                            </tr>
+                            <tr>
+                                <td>u64</td>
+                                <td>u64</td>
+                                <td>u64</td>
+                            </tr>
+                            <tr>
+                                <td>f64</td>
+                                <td>f64</td>
+                                <td>f64</td>
+                            </tr>
+                            <tr>
+                                <td>i64</td>
+                                <td>f64</td>
+                                <td>f64</td>
+                            </tr>
+                            <tr>
+                                <td>u64</td>
+                                <td>f64</td>
+                                <td>f64</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Список арифметических операций:</p>
+                    <ul>
+                        <li>Унарные <code>+</code> и <code>-</code></li>
+                        <li>Сложение <code>+</code> и вычитание <code>-</code></li>
+                        <li>Умножение <code>*</code>, деление <code>/</code>, остаток <code>%</code></li>
+                        <li>Побитовое И <code>&</code>, ИЛИ <code>|</code>, исключающее ИЛИ <code>^</code></li>
+                        <li>Скобки <code>()</code></li>
+                    </ul>
+                </div>
                 <h2 id="ae-memberaccess">Доступ к члену</h2>
+                <div class="h2">
+                    <p>Всеми любимая точка <code>.</code>. Используется для доступа к членам следующих сущностей:</p>
+                    <ul>
+                        <li>Объектов</li>
+                        <li>Типов, если они <a href="#as-using">используются</a> в контексте</li>
+                        <li>Контекстов</li>
+                        <li>Словарей</li>
+                    </ul>
+                    <div class="textbox">
+                        <div class="slt-code"><ol>
+                            <li class="slt-line"><span class="slt-digit">2</span>.<span class="slt-call">Equals</span>(<span class="slt-digit">2</span>);</li>
+                            <li class="slt-line"><span class="slt-keyword1">using </span><span class="slt-type">slt</span>;</li>
+                            <li class="slt-line">slt.<span class="slt-call">eval</span>(<span class="slt-keyword1">self</span>, <span class="slt-string">"null"</span>);</li>
+                            <li class="slt-line"><span class="slt-keyword1">self</span>.slt = <span class="slt-digit">null</span>;</li>
+                            <li class="slt-line">dct = {};</li>
+                            <li class="slt-line">(dct.x, dct.y) = (<span class="slt-digit">2</span>, <span class="slt-digit">3</span>);</li>
+                            <li class="slt-line">dct.Count;</li>
+                            </ol>
+                            </div>
+                            
+                    </div>
                     <h3 id="ae-nullconditional">Условие null</h3>
+                    <div class="h3">
+                        <p>Кроме того, можно проверить выражение на null перед выполнением. Это работает с именами, вызовами (в т.ч. обобщёнными) и индексаторами. Если левая часть null, выражение тоже вернёт null.</p>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line">x?.y;</li>
+                            <li class="slt-line"><span class="slt-call">x</span>.?();</li>
+                            <li class="slt-line"><span class="slt-call">x</span>.?&lt;<span class="slt-type">i64</span>&gt;();</li>
+                            <li class="slt-line">x.?[<span class="slt-digit">10</span>];</li>
+                            </ol>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
                 <h2 id="ae-indexator">Индексаторы</h2>
                 <h2 id="ae-typecast">Приведение к типу</h2>
                 <h2 id="ae-specialnames">Специальные имена</h2>
@@ -646,22 +816,22 @@
                     <h3 id="ae-creator-range">Создание диапазона</h3>
                     <h3 id="ae-creator-context">Создание контекста</h3>
                     <h3 id="ae-creator-using">Создание using</h3>
-                    <h3 id="ae-interpolatedstrings">Интерполированные строки</h3>
+                <h2 id="ae-interpolatedstrings">Интерполированные строки</h2>
                 <h2 id="ae-choosers">Операции случайного выбора</h2>
                 <h2 id="ae-reflection">Операции рефлексии</h2>
                     <h3 id="ae-typeof">Получение типа</h3>
                     <h3 id="ae-getoverload">Получение конкретной перегрузки</h3>
             <h1 id="a-statements">Утверждения</h1>
-                <h2>Утверждение-выражение</h2>
-                <h2>Условный оператор</h2>
-                <h2>Циклы</h2>
-                    <h3>Цикл while</h3>
-                    <h3>Цикл foreach</h3>
-                    <h3>break и continue</h3>
-                <h2>Оператор return</h2>
-                <h2>Оператор using</h2>
-                <h2>Оператор context</h2>
-                <h2>Обработка исключений</h2>
+                <h2 id="as-expr">Утверждение-выражение</h2>
+                <h2 id="as-condition">Условный оператор</h2>
+                <h2 id="as-loops">Циклы</h2>
+                    <h3 id="as-while">Цикл while</h3>
+                    <h3 id="as-foreach">Цикл foreach</h3>
+                    <h3 id="as-breakcontinue">Прерывание</h3>
+                <h2 id="as-return">Оператор return</h2>
+                <h2 id="as-using">Оператор using</h2>
+                <h2 id="as-context">Оператор context</h2>
+                <h2 id="as-try">Обработка исключений</h2>
         </div>
     </main>
     <footer>
