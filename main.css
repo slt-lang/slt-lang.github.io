@@ -239,11 +239,14 @@ main ul, main ol{
     margin-right: 25px;
 }
 code {
-    background-color: var(--ext-color-2);
+    background-color: var(--ext-color-3);
     border-radius: 3px;
     font-family: monospace;
     padding: 0px 3px;
     font-size: 14px;
+}
+code * {
+    font-family: monospace;
 }
 
 @media screen and (min-width: 1200px) {

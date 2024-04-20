@@ -2,35 +2,35 @@
     font-family: monospace;
     font-size: 14px;
 }
-.slt-code .slt-operator {
+.slt-operator {
     color: black;
 }
 
-.slt-code .slt-comment {
+.slt-comment {
     color: #808080;
 }
 
-.slt-code .slt-digit {
+.slt-digit {
     color: #008000;
 }
 
-.slt-code .slt-keyword1 {
+.slt-keyword1 {
     color: #0000FF;
 }
 
-.slt-code .slt-keyword2 {
+.slt-keyword2 {
     color: #8f08c4;
 }
 
-.slt-code .slt-type {
+.slt-type {
     color: #2d91af;
 }
 
-.slt-code .slt-call {
+.slt-call {
     color: #74531f;
 }
 
-.slt-code .slt-string {
+.slt-string {
     color: #a31515;
 }
 
