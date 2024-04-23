@@ -54,6 +54,7 @@
                             <h3><a href="#ae-nullconditional">§ Условие null</a></h3>
                         <h2><a href="#ae-indexator">§ Индексаторы</a></h2>
                         <h2><a href="#ae-typecast">§ Приведение к типу</a></h2>
+                            <h3><a href="#ae-asis">§ Как есть</a></h3>
                         <h2><a href="#ae-specialnames">§ Специальные имена</a></h2>
                             <h3><a href="#ae-s-self">§ self</a></h3>
                             <h3><a href="#ae-s-this">§ this</a></h3>
@@ -679,7 +680,14 @@
                             <li class="slt-line">(<span class="slt-digit">5</span> / <span class="slt-digit">2</span>)<span class="slt-keyword1"> is </span><span class="slt-type">i64</span>; <span class="slt-comment">// True</span></li>
                             </ol>
                             </div>
-                            
+                        </div>
+                        <p>Кроме того, вы можете сразу же создать новую переменную при удачном соответствии:</p>
+                        <div class="textbox">
+                            <div class="slt-code"><ol>
+                                <li class="slt-line">a = <span class="slt-digit">2</span>;</li>
+                                <li class="slt-line"><span class="slt-keyword2">if</span> (a<span class="slt-keyword1"> is </span><span class="slt-type">i64</span> b) a == b;</li>
+                                </ol>
+                                </div>                                
                         </div>
                     </div>
                     <h3 id="ae-ternary">Тернарная операция</h3>
@@ -890,6 +898,26 @@
                             </tr>
                         </tbody>
                     </table>
+                    <h3 id="ae-asis">Как есть</h3>
+                    <div class="h3">
+                        <p>Кроме того, вы можете получать выражения SLThree "как есть" с помощью операции <code class="slt-keyword1">as is</code>:</p>
+                        <div class="textbox">
+                            <div class="slt-code"><ol>
+                                <li class="slt-line">a = (<span class="slt-digit">3</span> + <span class="slt-digit">4</span>)<span class="slt-keyword1"> as </span><span class="slt-keyword1"> is</span>;</li>
+                                <li class="slt-line"><span class="slt-call">a</span>(); <span class="slt-comment">// 7</span></li>
+                                </ol>
+                                </div>
+                        </div>
+                        <p>Проверив типы с помощью команды интерпретатора <code>&gt;>-l --typed</code> мы увидим, что тип переменной <code>a</code> это <code class="slt-type">SLThree.BinaryAdd</code>. Получить значение у такого выражения можно двумя способами:</p>
+                        <div class="textbox">
+                            <div class="slt-code"><ol>
+                                <li class="slt-line">a = (<span class="slt-digit">2</span> + <span class="slt-digit">2</span> * <span class="slt-digit">2</span>)<span class="slt-keyword1"> as </span><span class="slt-keyword1"> is</span>;</li>
+                                <li class="slt-line"><span class="slt-call">a</span>(); <span class="slt-comment">// Просто вызвав его в языке</span></li>
+                                <li class="slt-line">a.<span class="slt-call">GetValue</span>(<span class="slt-keyword1">self</span>.<span class="slt-call">unwrap</span>());  <span class="slt-comment">// Либо вызывать метод GetValue напрямую, но тогда придётся передавать контекст в <a href="FAQ.html#ac-unwrap">чистом виде</a>.</span></li>
+                                </ol>
+                                </div>                                
+                        </div>
+                    </div>
                 </div>
                 <h2 id="ae-specialnames">Специальные имена</h2>
                 <div class="h2">
