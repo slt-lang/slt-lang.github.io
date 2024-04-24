@@ -29,6 +29,7 @@
                 <h2><a href="#a-contextes">§ Контексты</a></h2>
                     <h3><a href="#ac-typecast">§ Превращение в любые типы</a></h3>
                     <h3><a href="#ac-unwrap">§ Разворачивание контекста</a></h3>
+                <h2><a href="#a-other">§ Прочее</a></h2>
             </nav>
             <h2 id="a-methods">Методы</h2>
             <div class="h2">
@@ -86,6 +87,20 @@
                             <li class="slt-line">cnt.LocalVariables.<span class="slt-call">GetAsDictionary</span>();</li>
                             </ol>
                             </div>
+                    </div>
+                </div>
+            </div>
+            <h2 id="a-other">Прочее</h2>
+            <div class="h2">
+                <h3>Откуда берутся типы?</h3>
+                <div class="h3">
+                    <p>Типы берутся из сборок, находящихся в списке slt.registred:</p>
+                    <div class="textbox"><div class="slt-code"><ol>
+                        <li class="slt-line"><span class="slt-keyword1">using </span><span class="slt-type">slt</span>;</li>
+                        <li class="slt-line">slt.registred.<span class="slt-call">Contains</span>((@<span class="slt-type">any</span>).Assembly);</li>
+                        </ol>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

@@ -527,13 +527,12 @@
                                 </ol>
                                 </div>
                         </div>
-                        <p>Параметры описываются в скобках (если у метода параметр всего один и для него не аннотирован тип, скобки можно опустить):</p>
+                        <p>Параметры описываются в скобках (если у метода параметр всего один и у него отсутствуют модификаторы, скобки можно опустить):</p>
                         <div class="textbox">
                             <div class="slt-code"><ol>
                                 <li class="slt-line">(arg1, arg2) => arg1 + arg2;</li>
                                 </ol>
                                 </div>
-                                
                         </div>
                         <p>Для привязки метода к имени, его нужно присвоить этому имени:</p>
                         <div class="textbox"><div class="slt-code"><ol>
@@ -548,12 +547,28 @@
                         <ul>
                             <li><strong>explicit</strong> &mdash; отключение автоматического приведения числовых типов к максимальному в операциях. Арифметические операции не поддерживают никакие типы, кроме i64, u64 и f64. Однако, если вы используете именно их, этот модификатор может ускорить выполнение операций в два раза.</li>
                             <li><strong>recursive</strong> &mdash; контекст аргументов будет генерироваться при каждом вызове метода. По умолчанию, контекст метода кэшируется.</li>
+                            <li><strong>flex</strong> &mdash; контекст, в котором определён метод, может измениться при присваивании.</li>
                         </ul>
                         <div class="textbox"><div class="slt-code"><ol>
                             <li class="slt-line">fib = <span class="slt-keyword1">recursive</span> (n) => (n < <span class="slt-digit">2</span>) ? n : <span class="slt-keyword1">this</span>.<span class="slt-call">fib</span>(n - <span class="slt-digit">2</span>) + <span class="slt-keyword1">this</span>.<span class="slt-call">fib</span>(n - <span class="slt-digit">1</span>);</li>
                             </ol>
                             </div>
                             <span class="description">Рекурсивный алгоритм нахождения числа Фибоначчи</span>
+                        </div>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line">c = <span class="slt-keyword1">new context </span>{ </li>
+                            <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;a = <span class="slt-digit">10</span>;</li>
+                            <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;f = () =&gt; <span class="slt-keyword1">this</span>.a;</li>
+                            <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;g = <span class="slt-keyword1">flex</span> () =&gt; <span class="slt-keyword1">this</span>.a;</li>
+                            <li class="slt-line">};</li>
+                            <li class="slt-line">a = <span class="slt-digit">228</span>;</li>
+                            <li class="slt-line">f = c.f;</li>
+                            <li class="slt-line">g = c.g;</li>
+                            <li class="slt-line"><span class="slt-call">f</span>(); <span class="slt-comment">// 10</span></li>
+                            <li class="slt-line"><span class="slt-call">g</span>(); <span class="slt-comment">// 228</span></li>
+                            </ol>
+                            </div>
+                            <span class="description">Демонстрация flex</span>
                         </div>
                     </div>
                     <h3 id="ae-pipeoperator">Операция |&gt;</h3>
@@ -908,7 +923,7 @@
                                 </ol>
                                 </div>
                         </div>
-                        <p>Проверив типы с помощью команды интерпретатора <code>&gt;>-l --typed</code> мы увидим, что тип переменной <code>a</code> это <code class="slt-type">SLThree.BinaryAdd</code>. Получить значение у такого выражения можно двумя способами:</p>
+                        <p>Проверив типы с помощью команды интерпретатора <code>&gt;-l --typed</code> мы увидим, что тип переменной <code>a</code> это <code class="slt-type">SLThree.BinaryAdd</code>. Получить значение у такого выражения можно двумя способами:</p>
                         <div class="textbox">
                             <div class="slt-code"><ol>
                                 <li class="slt-line">a = (<span class="slt-digit">2</span> + <span class="slt-digit">2</span> * <span class="slt-digit">2</span>)<span class="slt-keyword1"> as </span><span class="slt-keyword1"> is</span>;</li>
@@ -1201,7 +1216,7 @@
                                 </ol>
                                 </div>
                         </div>
-                        <p>Существует также операция <code>@@</code>. Делает то же самое, за исключением того, что она высчитывается во время компиляции. Поэтому, работает только с полными именами типов и их синонимов.</p>
+                        <p>Существует также операция <code>@@</code>. Делает то же самое, за исключением того, что она высчитывается на этапе парсинга. Поэтому, работает только с полными именами типов и их синонимов.</p>
                     </div>
                     <h3 id="ae-getoverload">Получение конкретной перегрузки</h3>
                     <div class="h3">
@@ -1352,8 +1367,8 @@
                         <li class="slt-line">}</li>
                         </ol>
                         </div>
-                        
                     </div>
+                    <p>Этот код только демонстрация. Разумеется, у типа i64 (System.Int64) нет никакого поля x.</p>
                 </div>
                 <h2 id="as-try">Обработка исключений</h2>
                 <div class="h2">
@@ -1370,7 +1385,7 @@
                             <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">if</span> (^<span class="slt-digit">50%</span>)</li>
                             <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">throw</span> <span class="slt-keyword1">new </span><span class="slt-type">System.Exception</span>();</li>
                             <li class="slt-line">}<span class="slt-keyword2"> catch</span> (e) {</li>
-                            <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;console.<span class="slt-call">writeln</span>(<span class="slt-string">$"catched <span class="slt-operator">{e}</span>"</span>);</li>
+                            <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;console.<span class="slt-call">writeln</span>(<span class="slt-string">$"caught <span class="slt-operator">{e}</span>"</span>);</li>
                             <li class="slt-line">}<span class="slt-keyword2"> finally</span> {</li>
                             <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;console.<span class="slt-call">writeln</span>(<span class="slt-string">"finally"</span>);</li>
                             <li class="slt-line">}</li>
