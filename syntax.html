@@ -356,7 +356,7 @@
                                 <tr>
                                     <td>f64</td>
                                     <td>%</td>
-                                    <td rowspan="10">Да</td>
+                                    <td rowspan="9">Да</td>
                                     <td>10%</td>
                                 </tr>
                                 <tr>
@@ -429,7 +429,7 @@
                         <p>В языке существуют следующие операции расширенного присваивания: <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>&=</code>, <code>|=</code>, <code>^=</code></p>
                         <div class="textbox"><div class="slt-code"><ol>
                             <li class="slt-line">i = -<span class="slt-digit">1</span>;</li>
-                            <li class="slt-line"><span class="slt-keyword2">while</span> ((i += <span class="slt-digit">1</span>) < <span class="slt-digit">10</span>)</li>
+                            <li class="slt-line"><span class="slt-keyword2">while</span> ((i += <span class="slt-digit">1</span>) &LT; <span class="slt-digit">10</span>)</li>
                             <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-call">здесь_какой_то_код</span>();</li>
                             </ol>
                             </div>
@@ -549,7 +549,7 @@
                             <li><strong>recursive</strong> &mdash; контекст аргументов будет генерироваться при каждом вызове метода. По умолчанию, контекст метода кэшируется.</li>
                         </ul>
                         <div class="textbox"><div class="slt-code"><ol>
-                            <li class="slt-line">fib = <span class="slt-keyword1">recursive</span> (n) => (n < <span class="slt-digit">2</span>) ? n : <span class="slt-keyword1">this</span>.<span class="slt-call">fib</span>(n - <span class="slt-digit">2</span>) + <span class="slt-keyword1">this</span>.<span class="slt-call">fib</span>(n - <span class="slt-digit">1</span>);</li>
+                            <li class="slt-line">fib = <span class="slt-keyword1">recursive</span> (n) => (n &LT; <span class="slt-digit">2</span>) ? n : <span class="slt-keyword1">this</span>.<span class="slt-call">fib</span>(n - <span class="slt-digit">2</span>) + <span class="slt-keyword1">this</span>.<span class="slt-call">fib</span>(n - <span class="slt-digit">1</span>);</li>
                             </ol>
                             </div>
                             <span class="description">Рекурсивный алгоритм нахождения числа Фибоначчи</span>
@@ -1290,7 +1290,7 @@
                         <div class="textbox">
                             <div class="slt-code"><ol>
                                 <li class="slt-line">i = <span class="slt-digit">1</span>;</li>
-                                <li class="slt-line"><span class="slt-keyword2">while</span> ((i = i + <span class="slt-digit">1</span>) < <span class="slt-digit">100</span>)</li>
+                                <li class="slt-line"><span class="slt-keyword2">while</span> ((i = i + <span class="slt-digit">1</span>) &LT; <span class="slt-digit">100</span>)</li>
                                 <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;i -= ^[<span class="slt-digit">0</span>, <span class="slt-digit">1</span>];</li>
                                 </ol>
                                 </div>
@@ -1316,7 +1316,7 @@
                                 <li class="slt-line"><span class="slt-keyword2">foreach</span> (x<span class="slt-keyword2"> in </span>[<span class="slt-digit">1</span>, <span class="slt-digit">2</span>, <span class="slt-digit">3</span>]) {</li>
                                 <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">if</span> (x == <span class="slt-digit">1</span>)</li>
                                 <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">continue</span>;</li>
-                                <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">if</span> (x < <span class="slt-digit">3</span>)</li>
+                                <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">if</span> (x &LT; <span class="slt-digit">3</span>)</li>
                                 <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="slt-keyword2">break</span>;</li>
                                 <li class="slt-line">}</li>
                                 </ol>
