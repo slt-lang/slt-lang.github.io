@@ -547,28 +547,12 @@
                         <ul>
                             <li><strong>explicit</strong> &mdash; отключение автоматического приведения числовых типов к максимальному в операциях. Арифметические операции не поддерживают никакие типы, кроме i64, u64 и f64. Однако, если вы используете именно их, этот модификатор может ускорить выполнение операций в два раза.</li>
                             <li><strong>recursive</strong> &mdash; контекст аргументов будет генерироваться при каждом вызове метода. По умолчанию, контекст метода кэшируется.</li>
-                            <li><strong>flex</strong> &mdash; контекст, в котором определён метод, может измениться при присваивании.</li>
                         </ul>
                         <div class="textbox"><div class="slt-code"><ol>
                             <li class="slt-line">fib = <span class="slt-keyword1">recursive</span> (n) => (n < <span class="slt-digit">2</span>) ? n : <span class="slt-keyword1">this</span>.<span class="slt-call">fib</span>(n - <span class="slt-digit">2</span>) + <span class="slt-keyword1">this</span>.<span class="slt-call">fib</span>(n - <span class="slt-digit">1</span>);</li>
                             </ol>
                             </div>
                             <span class="description">Рекурсивный алгоритм нахождения числа Фибоначчи</span>
-                        </div>
-                        <div class="textbox"><div class="slt-code"><ol>
-                            <li class="slt-line">c = <span class="slt-keyword1">new context </span>{ </li>
-                            <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;a = <span class="slt-digit">10</span>;</li>
-                            <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;f = () =&gt; <span class="slt-keyword1">this</span>.a;</li>
-                            <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;g = <span class="slt-keyword1">flex</span> () =&gt; <span class="slt-keyword1">this</span>.a;</li>
-                            <li class="slt-line">};</li>
-                            <li class="slt-line">a = <span class="slt-digit">228</span>;</li>
-                            <li class="slt-line">f = c.f;</li>
-                            <li class="slt-line">g = c.g;</li>
-                            <li class="slt-line"><span class="slt-call">f</span>(); <span class="slt-comment">// 10</span></li>
-                            <li class="slt-line"><span class="slt-call">g</span>(); <span class="slt-comment">// 228</span></li>
-                            </ol>
-                            </div>
-                            <span class="description">Демонстрация flex</span>
                         </div>
                     </div>
                     <h3 id="ae-pipeoperator">Операция |&gt;</h3>
