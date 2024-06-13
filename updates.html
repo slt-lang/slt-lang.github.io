@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset='utf-8'>
+    <title>Обновления</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" href="slthree.ico"/>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='syntax.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='sltcode.css'>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><img src="headlogo.png" alt="logo"/></a>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="syntax.html">Синтаксис</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Обновления</h1>
+            <nav>
+                <span>Список обновлений:</span>
+                <h1><a href="#0-8-0">0.8.0 Unnamed update</a></h1>
+                <h1><a href="#refs">Ссылки</a></h1>
+            </nav>
+
+            <h1 id="0-8-0">0.8.0 Unnamed update [~.~.~]</h1>
+            <div class="h1">
+                <pre>
+    Часть ченджлога, которую осталось переписать:
+    - New method definition syntax
+        `[modifs][Name][<T>](args) {...}`
+        `[modifs][Name][<T>](args) => value`
+    - You can now copy contexts with ":" in the following cases:
+        - New initializers:       // [] - optional
+        `new T [Name][: Ancestors][{...}]`
+        - New context creators:
+        `context [Name][: Ancestors] {...}`
+        `new context [Name][: Ancestors]`
+    - Statement-like notation (without `;`) for expressions with body:
+        condition, match, context, new, methods
+    - Constructor method that creates new contexts
+        `context TBase { constructor = (f) => this.f = f; };`
+        `T1 = TBase(5); T2 = TBase(10);`
+    - The right side of the nested context initializer
+        assignations now always refers to the self context
+        `x = 1; context A { context B { x = x; }}`
+    - Parent keyword in constructed contexts
+        `T1.parent == TBase;`
+    - Condition statement is now expression
+    - Using statement is now expression
+    - Strong method binding
+                </pre>
+                <h2>Язык</h2>
+                <div class="h2">
+
+                    <ul><li><b>Выражение <code class="slt-keyword1">static</code></b>
+                        <br>Выполнение следующего за этим словом выражения будет только один раз.</li>
+                        </ul>
+                        <div class="textbox"><div class="slt-code"><ol>
+                            <li class="slt-line">get_x() =&gt; ^<span class="slt-digit">1</span>..<span class="slt-digit">10000</span>;</li>
+                            <li class="slt-line">get_y() =&gt; <span class="slt-keyword1">static </span>^<span class="slt-digit">1</span>..<span class="slt-digit">10000</span>;</li>
+                            <li class="slt-line"><span class="slt-call">get_x</span>() == <span class="slt-call">get_x</span>();</li>
+                            <li class="slt-line"><span class="slt-call">get_y</span>() == <span class="slt-call">get_y</span>();</li>
+                            </ol>
+                            </div>
+                        </div>
+                </div>
+                <h2>Несовместимые изменения синтаксиса</h2>
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th width="50%">Было (0.7.0)</th>
+                            <th width="50%">Стало (0.8.0)</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="textbox"><div class="slt-code"><ol>
+                                    <li class="slt-line"><span class="slt-keyword1">new context </span>Name : <span class="slt-type">T</span> { </li>
+                                    <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;x = <span class="slt-digit">2</span>;</li>
+                                    <li class="slt-line">};</li>
+                                    </ol>
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="textbox"><div class="slt-code"><ol>
+                                    <li class="slt-line"><span class="slt-keyword1">new </span><span class="slt-type">T</span> Name {
+                                    </li>
+                                    <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;x = <span class="slt-digit">2</span>;</li>
+                                    <li class="slt-line">}</li>
+                                    </ol>
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="textbox"><div class="slt-code"><ol>
+                                    <li class="slt-line"><span class="slt-keyword1">new context </span>: <span class="slt-type">T</span> { </li>
+                                    <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;x = <span class="slt-digit">2</span>;</li>
+                                    <li class="slt-line">};</li>
+                                    </ol>
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="textbox"><div class="slt-code"><ol>
+                                    <li class="slt-line"><span class="slt-keyword1">new </span><span class="slt-type">T</span> {
+                                    </li>
+                                    <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;x = <span class="slt-digit">2</span>;</li>
+                                    <li class="slt-line">}</li>
+                                    </ol>
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="textbox"><div class="slt-code"><ol>
+                                    <li class="slt-line"><span class="slt-keyword1">new context </span>Name : <span class="slt-type">T</span> ;</li>
+                                    </ol>
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="textbox"><div class="slt-code"><ol>
+                                    <li class="slt-line"><span class="slt-keyword1">new </span><span class="slt-type">T</span> Name;</li>
+                                    </ol>
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="textbox"><div class="slt-code"><ol>
+                                    <li class="slt-line"><span class="slt-keyword1">new context </span>: <span class="slt-type">T</span> ;</li>
+                                    </ol>
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="textbox"><div class="slt-code"><ol>
+                                    <li class="slt-line"><span class="slt-keyword1">new </span><span class="slt-type">T</span>;</li>
+                                    </ol>
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="textbox"><div class="slt-code"><ol>
+                                    <li class="slt-line"><span class="slt-keyword1">new context </span>Name { </li>
+                                    <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;x = <span class="slt-digit">2</span>;</li>
+                                    <li class="slt-line">};</li>
+                                    </ol>
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="textbox"><div class="slt-code"><ol>
+                                    <li class="slt-line"><span class="slt-keyword1">context</span> Name {
+                                    </li>
+                                    <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;x = <span class="slt-digit">2</span>;</li>
+                                    <li class="slt-line">}</li>
+                                    </ol>
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="textbox"><div class="slt-code"><ol>
+                                    <li class="slt-line"><span class="slt-keyword1">new context </span>{ </li>
+                                    <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;x = <span class="slt-digit">2</span>;</li>
+                                    <li class="slt-line">};</li>
+                                    </ol>
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="textbox"><div class="slt-code"><ol>
+                                    <li class="slt-line"><span class="slt-keyword1">context</span> {
+                                    </li>
+                                    <li class="slt-line">&nbsp;&nbsp;&nbsp;&nbsp;x = <span class="slt-digit">2</span>;</li>
+                                    <li class="slt-line">}</li>
+                                    </ol>
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Оптимизации</h2>
+                <div class="h2">
+                    <ul><li><b>Переделка Wrapper'а, ускорение сворачивания контекстов минимум в 3 раза, разворачивания минимум в 20 раз</b></li></ul>
+                </div>
+                <h2>Исправления</h2>
+                <div class="h2">
+                    <ul><li><a href="https://github.com/AIexandrKotov/SLThree/issues/125">#125 Invoke object by dot does not work normal</a></li></ul>
+                </div>
+            </div>
+
+            <h1 id="refs">Ссылки</h1>
+            <ul>
+                <li><a href="https://www.nuget.org/packages/SLThree#versions-body-tab">Список версий на Nuget</a></li>
+                <li><a href="https://github.com/AIexandrKotov/SLThree/releases">Список обновлений на GitHub</a></li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <span><a style="color: #400080" href="https://AIexandrKotov.github.io">aiexandrkotov.github.io</a></span>
+        </div>
+    </footer>
+</body>
+</html>
